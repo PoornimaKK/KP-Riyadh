@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Alstom\ICONIS\TABcRiyadh]
+"SERVER1"="10.5.10.100"
+"SERVER2"="10.5.10.101"
+"LogPath"="D:\\IconisHMI\\Log"

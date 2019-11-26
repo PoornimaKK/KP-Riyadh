@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ObjectPropertyModule Project="UEVOL_REG_KMRL" Generation_Date="2016-12-22" xsi:noNamespaceSchemaLocation="TPBerthTFView.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Versions>
+    <Version Name="ATS_SYSTEM_PARAMETERS#Comment" Value="_none_" />
+    <Version Name="ATS_SYSTEM_PARAMETERS#Date" Value="" />
+    <Version Name="ATS_SYSTEM_PARAMETERS#SyPD_Version" Value="" />
+    <Version Name="ATS_SYSTEM_PARAMETERS#UEVOLtoIDP_Version" Value="none" />
+    <Version Name="ATS_SYSTEM_PARAMETERS#Writer_Name" Value="" />
+    <Version Name="ATS_SYSTEM_PARAMETERS#XML_File_Version" Value="" />
+    <Version Name="ICONIS_ATS_Equipment#SyID_Version" Value="Y3-64 A430491-C" />
+    <Version Name="ICONIS_IDP#Customisation_SwRSAD_Version" Value="none" />
+    <Version Name="ICONIS_IDP#Product_SwRSAD_Version" Value="Y3-64 A427875-A" />
+    <Version Name="ICONIS_IDP#Product_Version" Value="V3.05.0.5034" />
+    <Version Name="ICONIS_IDP#Project_Version" Value="UEVOL_REG_KMRL#none" />
+    <Version Name="Project#Database_Version" Value="2.2.1" />
+  </Versions>
+  <Classes>
+    <Class name="S2KGALReport">
+      <Objects>
+        <Object name="Report2" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">RespectOfDepartureTimes.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">RespectOfDepartureTimes.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report2</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report2</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report3" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">RespectOfTheCommercialSpeed.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">RespectOfTheCommercialSpeed.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report3</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report3</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report4" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">StationsStops.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">StationsStops.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report4</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report4</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report5" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">AvailabilityOfTheDoors.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">AvailabilityOfTheDoors.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report5</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report5</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report6" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">TemperatureLevelInTheTrains.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">TemperatureLevelInTheTrains.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report6</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report6</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report7" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">TrainEvacuations.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">TrainEvacuations.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report7</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report7</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report8" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">UnexpectedStops.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">UnexpectedStops.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report8</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report8</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+        <Object name="Report9" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">TripAchievmentLevel.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">TripAchievmentLevel.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report9</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report9</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+		<Object name="Report10" rules="update_or_create">
+          <Properties>
+            <Property name="DataBaseName" dt="string">SoQDB</Property>
+            <Property name="ExportFileName" dt="string">ServiceAvailability.rpt</Property>
+            <Property name="ExportPath" dt="string">\\CER_DLG\ReportsShared</Property>
+            <Property name="TemplateFileName" dt="string">ServiceAvailability.rpt</Property>
+            <Property name="TemplatePath" dt="string">D:\IconisTM4\Reports</Property>
+            <MultiLingualProperty name="Name">
+              <MultiLingualValue roleId="-1" localeId="1033">Report10</MultiLingualValue>
+              <MultiLingualValue roleId="-1" localeId="1036">Report10</MultiLingualValue>
+            </MultiLingualProperty>
+          </Properties>
+        </Object>
+      </Objects>
+    </Class>
+  </Classes>
+</ObjectPropertyModule>

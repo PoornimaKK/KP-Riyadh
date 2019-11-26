@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDP_RiyadhAnalyzer", "IDP_Riyadh\IDP_RiyadhAnalyzer\IDP_RiyadhAnalyzer.csproj", "{F7958C10-F0B6-4B32-885D-F385C03A5A67}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupIDP_Riyadh", "IDP_Riyadh\SetupIDP_Riyadh\SetupIDP_Riyadh.vdproj", "{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Template|Any CPU = Template|Any CPU
+		Template|Mixed Platforms = Template|Mixed Platforms
+		Template|Win32 = Template|Win32
+		Unicode Debug|Any CPU = Unicode Debug|Any CPU
+		Unicode Debug|Mixed Platforms = Unicode Debug|Mixed Platforms
+		Unicode Debug|Win32 = Unicode Debug|Win32
+		Unicode Release|Any CPU = Unicode Release|Any CPU
+		Unicode Release|Mixed Platforms = Unicode Release|Mixed Platforms
+		Unicode Release|Win32 = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Template|Any CPU.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Template|Any CPU.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Template|Mixed Platforms.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Template|Mixed Platforms.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Template|Win32.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Debug|Any CPU.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Debug|Any CPU.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Debug|Mixed Platforms.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Debug|Mixed Platforms.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Debug|Win32.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Any CPU.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Any CPU.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Mixed Platforms.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Mixed Platforms.Build.0 = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Win32.ActiveCfg = Unicode Release|Any CPU
+		{F7958C10-F0B6-4B32-885D-F385C03A5A67}.Unicode Release|Win32.Build.0 = Unicode Release|Any CPU
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Any CPU.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Any CPU.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Mixed Platforms.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Mixed Platforms.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Win32.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Template|Win32.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Any CPU.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Any CPU.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Mixed Platforms.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Mixed Platforms.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Win32.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Debug|Win32.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Any CPU.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Any CPU.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Mixed Platforms.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Mixed Platforms.Build.0 = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Win32.ActiveCfg = Unicode Release
+		{8CFC2C09-2137-4FA0-88DF-77D55C9DB504}.Unicode Release|Win32.Build.0 = Unicode Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

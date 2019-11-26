@@ -1,0 +1,2513 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Alstom Transport SA (Alstom Transport SA) -->
+<uevol:ICD doc-ref="UEVOL-1081-Q" from="CC" to="ATS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uevol="ISIS">
+	<uevol:static-description interface_name="CC_ATS_1_2">
+		<uevol:direction source="CC" destination="ATS"/>
+		<uevol:message size-in="bit" name="Rolling Stock Status Report" id="104" protocol="GSA" type="ACK" application-stack="1" transport-stack="1">
+			<uevol:field field-type="simple" name="MESSAGE_VALIDITY" designation="Message validity" item="1" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the content of this message is valid when it is equal to 0." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="project_itf_ver" designation="project interface version, to define the messages mapping to allow data migration" item="2" size="8" type="uint8" range_min="0" range_max="255" description="project interface version, to define the messages mapping to allow data migration" vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_OPERATING_MODE_STATUS" designation="Train Operating Mode status" item="3" size="8" type="uint8" range_min="0" range_max="255" description="Train Operating Mode applied by RS: 00000000b: Unknown Train Operating Mode applied 00000001b: Depot and Mainline OFF Service applied  00000010b: Mainline IN Service applied 00000100b: Standby applied 00001000b: Asleep applied 00010000b: Waked-up applied 00100000b: Maintenance applied 01000000b: Washing applied" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="Unknown" value="0"/>
+					<uevol:item name="Depot and Mainline OFF Service" value="1"/>
+					<uevol:item name="Mainline IN Service" value="2"/>
+					<uevol:item name="Standby" value="4"/>
+					<uevol:item name="Asleep" value="8"/>
+					<uevol:item name="Waked-up" value="16"/>
+					<uevol:item name="Maintenance" value="32"/>
+					<uevol:item name="Washing" value="64"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_APPLIED_DST_UTC_OFFSET" designation="Validity of Applied DST_UTC_Offset" item="4" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the next field is valid when it is equal to 0." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="APPLIED_DST_UTC_OFFSET" designation="Applied DST_UTC_Offset" item="5" size="32" type="int32" quantum="1" range_min="-86400" range_max="86400" unit="second" description="Offset between UTC time (Universal Time Coordinated) and DST (Daylight Saving Time) applied by the CC." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_ESTIMATED_TRAIN_MOVEMENT" designation="Validity of Estimated train movement" item="6" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the next field is valid when it is equal to 0." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="ESTIMATED_TRAIN_MOVEMENT" designation="Estimated train movement" item="7" size="8" type="uint8" range_min="0" range_max="1" description="The  train is at stop in short docking inside arrival area" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="train is not at stop in short docking inside arrival area" value="0"/>
+					<uevol:item name="train is at stop in short docking inside arrival area" value="1"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_CUMULATED_RUN_DISTANCE" designation="Validity of cumulated_run_distance" item="8" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates if   the next field is valid Refer also to §4  “Guideline for ATS-RS  Deployment”." vital="0">
+				<uevol:enumeration>
+					<uevol:item name="Next field is usable" value="0"/>
+					<uevol:item name="Next field is not usable" value="1"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="CUMULATED_RUN_DISTANCE" designation="Cumulated_run_distance" item="9" size="32" type="ulong" quantum="1" range_min="0" range_max="4294836225" unit="Km" description="Cumulated distance run by the train and supplied by the Rolling Stock." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_CC_COMBINED_STATUS" designation="Validity of CC combined status" item="10" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates if the next field is valid Refer also to §4 “Guideline for ATS-RS  Deployment”." vital="0">
+				<uevol:enumeration>
+					<uevol:item name="Next field is usable" value="0"/>
+					<uevol:item name="Next field is not usable" value="1"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="CC_COMBINED_STATUS" designation="CC combined status" item="11" size="3" type="uint8" range_min="0" range_max="4" description="Status of CC combined tests  reported to ATS: The CC combined tests is project specific; the project shall parameterize the sequence of combined tests to be performed. And according to the parameterization done by project  , the status of test will be reported to ATS by CC" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="Unknown" value="0"/>
+					<uevol:item name="In progress" value="1"/>
+					<uevol:item name="failed" value="2"/>
+					<uevol:item name="Successful" value="3"/>
+					<uevol:item name="Not Done" value="4"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_EB_CAUSES" designation="Validity of EB CAUSES" item="12" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates if   the next field is valid Refer also to §4  “Guideline for ATS-RS  Deployment”. " vital="0">
+				<uevol:enumeration>
+					<uevol:item name="Next field is usable" value="0"/>
+					<uevol:item name="Next field is not usable" value="1"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="EB_CAUSES1" designation="DIFFERENT EB CAUSES" item="13" size="8" type="uint8" range_min="0" range_max="11" description="0 = No EB cause;1 = EB du to train doors unlocked;2= EB du to train PSD unlocked;3= EB du to train train hold applied;4= EB du to train over-speed; 5= EB du to train restrictive emergency stop area; 6= EB du to fatal fault; 7=EB du to safety immobilisation not obtained; 8== EB du to rollback; 9= EB du to changing mode while running; 10=EB du to EB requested from ATS; 11= EB du to Rolling Stock">
+				<uevol:enumeration>
+					<uevol:item name="No EB CAUSE" value="0"/>
+					<uevol:item name="EB due to train doors unlocked" value="1"/>
+					<uevol:item name="EB du to train PSD unlocked" value="2"/>
+					<uevol:item name="EB du to train train hold applied" value="3"/>
+					<uevol:item name="EB du to train over-speed" value="4"/>
+					<uevol:item name="EB du to train restrictive emergency stop area" value="5"/>
+					<uevol:item name="EB du to fatal fault" value="6"/>
+					<uevol:item name="EB du to safety immobilisation not obtained" value="7"/>
+					<uevol:item name="EB du to rollback" value="8"/>
+					<uevol:item name="EB du to rollback" value="9"/>
+					<uevol:item name="EB du to EB requested from ATS" value="10"/>
+					<uevol:item name="EB du to Rolling Stock" value="11"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="EB_CAUSES2" designation="DIFFERENT EB CAUSES" item="14" size="8" type="uint8" range_min="0" range_max="11" description="0 = No EB cause;1 = EB du to train doors unlocked;2= EB du to train PSD unlocked;3= EB du to train train hold applied;4= EB du to train over-speed; 5= EB du to train restrictive emergency stop area; 6= EB du to fatal fault; 7=EB du to safety immobilisation not obtained; 8== EB du to rollback; 9= EB du to changing mode while running; 10=EB du to EB requested from ATS; 11= EB du to Rolling Stock">
+				<uevol:enumeration>
+					<uevol:item name="No EB CAUSE" value="0"/>
+					<uevol:item name="EB due to train doors unlocked" value="1"/>
+					<uevol:item name="EB du to train PSD unlocked" value="2"/>
+					<uevol:item name="EB du to train train hold applied" value="3"/>
+					<uevol:item name="EB du to train over-speed" value="4"/>
+					<uevol:item name="EB du to train restrictive emergency stop area" value="5"/>
+					<uevol:item name="EB du to fatal fault" value="6"/>
+					<uevol:item name="EB du to safety immobilisation not obtained" value="7"/>
+					<uevol:item name="EB du to rollback" value="8"/>
+					<uevol:item name="EB du to rollback" value="9"/>
+					<uevol:item name="EB du to EB requested from ATS" value="10"/>
+					<uevol:item name="EB du to Rolling Stock" value="11"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_TRAIN_DOORS_OPENING_ISOLATION_STATUS_ON_SIDE_A" designation="Validity of Train doors opening isolation status on side A" item="15" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the next field is valid when it is equal to 0." vital="0"/>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_1_ON_SIDE_A" designation="Train doors opening isolation status of train door 1 on side A" item="16" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 0 : Door 1 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 1 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_2_ON_SIDE_A" designation="Train door opening isolation status of train door 2 on side A" item="17" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 1 : Door 2 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 2 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_3_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="18" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 2 : Door 3 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 3 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_4_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="19" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 3 : Door 4 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 4 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_5_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="20" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 4 : Door 5 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 5 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_6_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="21" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 5 : Door 6 isolation status">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 6 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_7_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="22" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 6 : Door 7 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 7 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_8_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="23" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 7 : Door 8 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 8 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_9_ON_SIDE_A" designation="Train door opening isolation status of train door 3 on side A" item="24" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 8 : Door 9 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 9 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_10_ON_SIDE_A" designation="Train door opening isolation status of train door 10 on side A" item="25" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 9 : Door 10 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 10 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_11_ON_SIDE_A" designation="Train door opening isolation status of train door 11 on side A" item="26" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 10 : Door 11 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 11 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_12_ON_SIDE_A" designation="Train door opening isolation status of train door 12 on side A" item="27" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : bit 11 : Door 12 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 12 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="VALIDITY_OF_TRAIN_DOORS_OPENING_ISOLATION_STATUS_ON_SIDE_B" designation="Validity of Train doors opening isolation status on side B" item="28" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the next field is valid when it is equal to 0." vital="0"/>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_1_ON_SIDE_B" designation="Train doors opening isolation status of train door 1 on side B" item="29" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 0 : Door 1 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 1 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_2_ON_SIDE_B" designation="Train door opening isolation status of train door 2 on side B" item="30" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 1 : Door 2 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 2 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_3_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="31" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 2 : Door 3 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 3 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_4_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="32" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 3 : Door 4 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 4 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_5_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="33" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 4 : Door 5 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 5 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_6_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="34" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 5 : Door 6 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 6 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_7_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="35" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 6 : Door 7 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 7 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_8_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="36" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 7 : Door 8 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 8 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_9_ON_SIDE_B" designation="Train door opening isolation status of train door 3 on side B" item="37" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 8 : Door 9 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 9 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_10_ON_SIDE_B" designation="Train door opening isolation status of train door 10 on side B" item="38" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 9 : Door 10 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 10 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_11_ON_SIDE_B" designation="Train door opening isolation status of train door 11 on side B" item="39" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 10 : Door 11 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 11 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOORS_OPENING_ISOLATION_STATUS_OF_TRAIN_DOOR_12_ON_SIDE_B" designation="Train door opening isolation status of train door 12 on side B" item="40" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 11 : Door 12 isolation status" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door isolated" value="0"/>
+					<uevol:item name="Door 12 isolated" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS001_" designation="DD_CIOS001" item="41" size="1" type="boolean" range_min="0" range_max="1" description="IOS1 : One compressor out of service indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS002_" designation="DD_CIOS002" item="42" size="1" type="boolean" range_min="0" range_max="1" description="IOS2 : Two compressors out of service indication on unit on single unit configuration">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS003_" designation="DD_CIOS003" item="43" size="1" type="boolean" range_min="0" range_max="1" description="IOS3 : Two compressors out of service indication on unit on mutliple unit configuration">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS004_" designation="DD_CIOS004" item="44" size="1" type="boolean" range_min="0" range_max="1" description="IOS4 : Inconsistancy between LMRG">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS005_" designation="DD_CIOS005" item="45" size="1" type="boolean" range_min="0" range_max="1" description="IOS5 : Inconsistancy between both LMRG and pressure value on a single US">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS006_" designation="DD_CIOS006" item="46" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS007_" designation="DD_CIOS007" item="47" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS008_" designation="DD_CIOS008" item="48" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS009_" designation="DD_CIOS009" item="49" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS010_" designation="DD_CIOS010" item="50" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS011_" designation="DD_CIOS011" item="51" size="1" type="boolean" range_min="0" range_max="1" description="IOS11 : BCE master fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS012_" designation="DD_CIOS012" item="52" size="1" type="boolean" range_min="0" range_max="1" description="IOS12 : BCE no master fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS013_" designation="DD_CIOS013" item="53" size="1" type="boolean" range_min="0" range_max="1" description="IOS13 : BCE autotest result failed">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS014_" designation="DD_CIOS014" item="54" size="1" type="boolean" range_min="0" range_max="1" description="IOS14 : Service brake applied loop in default indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS015_" designation="DD_CIOS015" item="55" size="1" type="boolean" range_min="0" range_max="1" description="IOS15 : Service brake released loop in default indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS016_" designation="DD_CIOS016" item="56" size="1" type="boolean" range_min="0" range_max="1" description="IOS16 : Emergency brake relay fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS017_" designation="DD_CIOS017" item="57" size="1" type="boolean" range_min="0" range_max="1" description="IOS17 : Service brake forced released impossible indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS018_" designation="DD_CIOS018" item="58" size="1" type="boolean" range_min="0" range_max="1" description="IOS18 : Release via Major Fault not possible on 1 axle/bogie/car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS019_" designation="DD_CIOS019" item="59" size="1" type="boolean" range_min="0" range_max="1" description="IOS19 : At least one parking brake fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS020_" designation="DD_CIOS020" item="60" size="1" type="boolean" range_min="0" range_max="1" description="IOS20 : At least two parking isolated">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS021_" designation="DD_CIOS021" item="61" size="1" type="boolean" range_min="0" range_max="1" description="IOS21 : Minor fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS022_" designation="DD_CIOS022" item="62" size="1" type="boolean" range_min="0" range_max="1" description="IOS22 : Major Fault on 1 brake unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS023_" designation="DD_CIOS023" item="63" size="1" type="boolean" range_min="0" range_max="1" description="IOS23 : Major Fault on at least 2 brake units on Single Unit ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS024_" designation="DD_CIOS024" item="64" size="1" type="boolean" range_min="0" range_max="1" description="IOS24 : One brake unit isolated on Single Unit ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS025_" designation="DD_CIOS025" item="65" size="1" type="boolean" range_min="0" range_max="1" description="IOS25 : Two brake units isolated on Single Unit ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS026_" designation="DD_CIOS026" item="66" size="1" type="boolean" range_min="0" range_max="1" description="IOS26 : Mechanical WSP not available on 1 axle/bogie/car on Single unit ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS027_" designation="DD_CIOS027" item="67" size="1" type="boolean" range_min="0" range_max="1" description="IOS27 : Mechanical WSP not available on more than 1 axle/bogie/car on Single unit ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS028_" designation="DD_CIOS028" item="68" size="1" type="boolean" range_min="0" range_max="1" description="IOS28 : At least one axle locked">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS029_" designation="DD_CIOS029" item="69" size="1" type="boolean" range_min="0" range_max="1" description="IOS29 : Untimely EB on 1 BCU">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS030_" designation="DD_CIOS030" item="70" size="1" type="boolean" range_min="0" range_max="1" description="IOS30 : emergency brake control and command discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS031_" designation="DD_CIOS031" item="71" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS032_" designation="DD_CIOS032" item="72" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS033_" designation="DD_CIOS033" item="73" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS034_" designation="DD_CIOS034" item="74" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS035_" designation="DD_CIOS035" item="75" size="1" type="boolean" range_min="0" range_max="1" description="IOS35 : Loss of 50% of ventilation of at least one HVAC unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS036_" designation="DD_CIOS036" item="76" size="1" type="boolean" range_min="0" range_max="1" description="IOS36 : Loss of 100% of ventilation of at least one HVAC unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS037_" designation="DD_CIOS037" item="77" size="1" type="boolean" range_min="0" range_max="1" description="IOS37 : Loss of 100% of heating of at least one HVAC unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS038_" designation="DD_CIOS038" item="78" size="1" type="boolean" range_min="0" range_max="1" description="IOS38 : HVAC unit cooling fault with normal temperature">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS039_" designation="DD_CIOS039" item="79" size="1" type="boolean" range_min="0" range_max="1" description="IOS39 : HVAC unit cooling fault with interior temperature in level 1 ( TTarg+ParamLow Tint ≤ TTarg+ParamHigh)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS040_" designation="DD_CIOS040" item="80" size="1" type="boolean" range_min="0" range_max="1" description="IOS 40 : HVAC unit cooling fault with interior temperature in level 2  ( Tint > TTarg+ParamHigh)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS041_" designation="DD_CIOS041" item="81" size="1" type="boolean" range_min="0" range_max="1" description="IOS 41 : HVAC unit no fault with interior temperature higher than Max Threshold   ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS042_" designation="DD_CIOS042" item="82" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS043_" designation="DD_CIOS043" item="83" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS044_" designation="DD_CIOS044" item="84" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS045_" designation="DD_CIOS045" item="85" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS046_" designation="DD_CIOS046" item="86" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS047_" designation="DD_CIOS047" item="87" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS048_" designation="DD_CIOS048" item="88" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS049_" designation="DD_CIOS049" item="89" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS050_" designation="DD_CIOS050" item="90" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS051_" designation="DD_CIOS051" item="91" size="1" type="boolean" range_min="0" range_max="1" description="IOS51 : Discordance between information TCMS coupled and ATC. The relays stuck at resting position but ATC status is coupled.">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS052_" designation="DD_CIOS052" item="92" size="1" type="boolean" range_min="0" range_max="1" description="IOS52 :Discordance between the uncoupling status and the uncoupling request. The coupled relay status is work but the train is not coupled">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS053_" designation="DD_CIOS053" item="93" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS054_" designation="DD_CIOS054" item="94" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS055_" designation="DD_CIOS055" item="95" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS056_" designation="DD_CIOS056" item="96" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS057_" designation="DD_CIOS057" item="97" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS058_" designation="DD_CIOS058" item="98" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS059_" designation="DD_CIOS059" item="99" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS060_" designation="DD_CIOS060" item="100" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS061_" designation="DD_CIOS061" item="101" size="1" type="boolean" range_min="0" range_max="1" description="IOS61 : At least one door is not operational indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS062_" designation="DD_CIOS062" item="102" size="1" type="boolean" range_min="0" range_max="1" description="IOS62 : At least one door is isolated indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS063_" designation="DD_CIOS063" item="103" size="1" type="boolean" range_min="0" range_max="1" description="IOS63 : At least two doors are isolated on the same side indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS064_" designation="DD_CIOS064" item="104" size="1" type="boolean" range_min="0" range_max="1" description="IOS64 : Door RELEASE control fault train indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS065_" designation="DD_CIOS065" item="105" size="1" type="boolean" range_min="0" range_max="1" description="IOS65 : Door INTERLOCK fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS066_" designation="DD_CIOS066" item="106" size="1" type="boolean" range_min="0" range_max="1" description="IOS66 : Door OPEN ORDER fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS067_" designation="DD_CIOS067" item="107" size="1" type="boolean" range_min="0" range_max="1" description="IOS67 : Door CLOSING request fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS068_" designation="DD_CIOS068" item="108" size="1" type="boolean" range_min="0" range_max="1" description="IOS68 : Zero velocity fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS069_" designation="DD_CIOS069" item="109" size="1" type="boolean" range_min="0" range_max="1" description="IOS69 : Detrainment Door OPEN ORDER fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS070_" designation="DD_CIOS070" item="110" size="1" type="boolean" range_min="0" range_max="1" description="IOS70 : Partition Door Fault indication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS071_" designation="DD_CIOS071" item="111" size="1" type="boolean" range_min="0" range_max="1" description="IOS71 : Discrepency between EED status provided by EDCU and ATC information">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS072_" designation="DD_CIOS072" item="112" size="1" type="boolean" range_min="0" range_max="1" description="IOS72 : Door EED permanent reset">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS073_" designation="DD_CIOS073" item="113" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS074_" designation="DD_CIOS074" item="114" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS075_" designation="DD_CIOS075" item="115" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS076_" designation="DD_CIOS076" item="116" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS077_" designation="DD_CIOS077" item="117" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS078_" designation="DD_CIOS078" item="118" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS079_" designation="DD_CIOS079" item="119" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS080_" designation="DD_CIOS080" item="120" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS081_" designation="DD_CIOS081" item="121" size="1" type="boolean" range_min="0" range_max="1" description="IOS81 : a global failure about cabin occupied relays or contactor">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS082_" designation="DD_CIOS082" item="122" size="1" type="boolean" range_min="0" range_max="1" description="IOS82 : a global failure about cabin neutral relays or contactor">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS083_" designation="DD_CIOS083" item="123" size="1" type="boolean" range_min="0" range_max="1" description="IOS83 : The Preparation and wake-up relays discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS084_" designation="DD_CIOS084" item="124" size="1" type="boolean" range_min="0" range_max="1" description="IOS84 : The De preparation (sleeping) relays discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS085_" designation="DD_CIOS085" item="125" size="1" type="boolean" range_min="0" range_max="1" description="IOS85 : The zero velocity relay discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS086_" designation="DD_CIOS086" item="126" size="1" type="boolean" range_min="0" range_max="1" description="IOS86 : The dead man relays discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS087_" designation="DD_CIOS087" item="127" size="1" type="boolean" range_min="0" range_max="1" description="IOS87 : ATC Bypass activation failure or discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS088_" designation="DD_CIOS088" item="128" size="1" type="boolean" range_min="0" range_max="1" description="IOS88 : At least Doors Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS089_" designation="DD_CIOS089" item="129" size="1" type="boolean" range_min="0" range_max="1" description="IOS89 : At least ONE Obstacle Detection Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS090_" designation="DD_CIOS090" item="130" size="1" type="boolean" range_min="0" range_max="1" description="IOS90 : At least ONE Derailment Detection Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS091_" designation="DD_CIOS091" item="131" size="1" type="boolean" range_min="0" range_max="1" description="IOS91 : At least ONE LMRG Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS092_" designation="DD_CIOS092" item="132" size="1" type="boolean" range_min="0" range_max="1" description="IOS92 : At least Two LMRG Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS093_" designation="DD_CIOS093" item="133" size="1" type="boolean" range_min="0" range_max="1" description="IOS93 : Two driving modes are selected in the same time">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS094_" designation="DD_CIOS094" item="134" size="1" type="boolean" range_min="0" range_max="1" description="IOS94 : At least one zero velocity relays, contactors are in failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS095_" designation="DD_CIOS095" item="135" size="1" type="boolean" range_min="0" range_max="1" description="IOS95 : At least one brake Bypass active on train US OR UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS096_" designation="DD_CIOS096" item="136" size="1" type="boolean" range_min="0" range_max="1" description="IOS96 : Discrepancy between K_ZeroVel relay and BCE or PCE or ATC">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS097_" designation="DD_CIOS097" item="137" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS098_" designation="DD_CIOS098" item="138" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS099_" designation="DD_CIOS099" item="139" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS100_" designation="DD_CIOS100" item="140" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS101_" designation="DD_CIOS101" item="141" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS102_" designation="DD_CIOS102" item="142" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS103_" designation="DD_CIOS103" item="143" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS104_" designation="DD_CIOS104" item="144" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS105_" designation="DD_CIOS105" item="145" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS106_" designation="DD_CIOS106" item="146" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS107_" designation="DD_CIOS107" item="147" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS108_" designation="DD_CIOS108" item="148" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS109_" designation="DD_CIOS109" item="149" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS110_" designation="DD_CIOS110" item="150" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS111_" designation="DD_CIOS111" item="151" size="1" type="boolean" range_min="0" range_max="1" description="IOS111 : Incorrect Operational Status informing about exterior lights fault (tail lights and head lights">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS112_" designation="DD_CIOS112" item="152" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS113_" designation="DD_CIOS113" item="153" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS114_" designation="DD_CIOS114" item="154" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS115_" designation="DD_CIOS115" item="155" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS116_" designation="DD_CIOS116" item="156" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS117_" designation="DD_CIOS117" item="157" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS118_" designation="DD_CIOS118" item="158" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS119_" designation="DD_CIOS119" item="159" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS120_" designation="DD_CIOS120" item="160" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS121_" designation="DD_CIOS121" item="161" size="1" type="boolean" range_min="0" range_max="1" description="IOS121 : At least one fire detection is on failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS122_" designation="DD_CIOS122" item="162" size="1" type="boolean" range_min="0" range_max="1" description="IOS122 : At least one fire is detected">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS123_" designation="DD_CIOS123" item="163" size="1" type="boolean" range_min="0" range_max="1" description="IOS123 : At least one internal smoke sensor is on failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS124_" designation="DD_CIOS124" item="164" size="1" type="boolean" range_min="0" range_max="1" description="IOS124 : At least one internal smoke detection is present">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS125_" designation="DD_CIOS125" item="165" size="1" type="boolean" range_min="0" range_max="1" description="IOS125 : At least one external smoke sensor is on failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS126_" designation="DD_CIOS126" item="166" size="1" type="boolean" range_min="0" range_max="1" description="IOS126 : External smoke is detected">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS127_" designation="DD_CIOS127" item="167" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS128_" designation="DD_CIOS128" item="168" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS129_" designation="DD_CIOS129" item="169" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS130_" designation="DD_CIOS130" item="170" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS131_" designation="DD_CIOS131" item="171" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS132_" designation="DD_CIOS132" item="172" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS133_" designation="DD_CIOS133" item="173" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS134_" designation="DD_CIOS134" item="174" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS135_" designation="DD_CIOS135" item="175" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS136_" designation="DD_CIOS136" item="176" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS137_" designation="DD_CIOS137" item="177" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS138_" designation="DD_CIOS138" item="178" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS139_" designation="DD_CIOS139" item="179" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS140_" designation="DD_CIOS140" item="180" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS141_" designation="DD_CIOS141" item="181" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS142_" designation="DD_CIOS142" item="182" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS143_" designation="DD_CIOS143" item="183" size="1" type="boolean" range_min="0" range_max="1" description="IOS143 : 1 Traction HV presence inconsistent with Train HV presence">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS144_" designation="DD_CIOS144" item="184" size="1" type="boolean" range_min="0" range_max="1" description="IOS144 : 1 APC HV presence inconsistent with Train HV presence">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS145_" designation="DD_CIOS145" item="185" size="1" type="boolean" range_min="0" range_max="1" description="IOS145 : More than 1 Traction HV presence inconsistent with Train HV presence">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS146_" designation="DD_CIOS146" item="186" size="1" type="boolean" range_min="0" range_max="1" description="IOS146 : More than 1 APC HV presence inconsistent with Train HV presence">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS147_" designation="DD_CIOS147" item="187" size="1" type="boolean" range_min="0" range_max="1" description="IOS147 : 1 APC HV Presence failure and 1 Traction HV Presence failure with Train HV presence">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS148_" designation="DD_CIOS148" item="188" size="1" type="boolean" range_min="0" range_max="1" description="IOS148 : IES consistency failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS149_" designation="DD_CIOS149" item="189" size="1" type="boolean" range_min="0" range_max="1" description="IOS149 : HV isolation failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS150_" designation="DD_CIOS150" item="190" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS151_" designation="DD_CIOS151" item="191" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS152_" designation="DD_CIOS152" item="192" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS153_" designation="DD_CIOS153" item="193" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS154_" designation="DD_CIOS154" item="194" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS155_" designation="DD_CIOS155" item="195" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS156_" designation="DD_CIOS156" item="196" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS157_" designation="DD_CIOS157" item="197" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS158_" designation="DD_CIOS158" item="198" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS159_" designation="DD_CIOS159" item="199" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS160_" designation="DD_CIOS160" item="200" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS161_" designation="DD_CIOS161" item="201" size="1" type="boolean" range_min="0" range_max="1" description="IOS161: At least one circuit breakers is tripped in CAR">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS162_" designation="DD_CIOS162" item="202" size="1" type="boolean" range_min="0" range_max="1" description="IOS162 :At  least two circuit breakers are tripped in the same car  on train">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS163_" designation="DD_CIOS163" item="203" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS164_" designation="DD_CIOS164" item="204" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS165_" designation="DD_CIOS165" item="205" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS166_" designation="DD_CIOS166" item="206" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS167_" designation="DD_CIOS167" item="207" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS168_" designation="DD_CIOS168" item="208" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS169_" designation="DD_CIOS169" item="209" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS170_" designation="DD_CIOS170" item="210" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS171_" designation="DD_CIOS171" item="211" size="1" type="boolean" range_min="0" range_max="1" description="IOS171 : 1 APC LV Status false and 1 Battery not available (Battery isolated, Battery protection tripped, Battery not charging)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS172_" designation="DD_CIOS172" item="212" size="1" type="boolean" range_min="0" range_max="1" description="IOS172 : All APC MV Status false or communication lost">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS173_" designation="DD_CIOS173" item="213" size="1" type="boolean" range_min="0" range_max="1" description="IOS173 : 2 or more LV Permanent or LV Prepared or Shedding contactor application fault (protection tripped, or contactor control/command inconsistency)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS174_" designation="DD_CIOS174" item="214" size="1" type="boolean" range_min="0" range_max="1" description="IOS174 : MV Earthing fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS175_" designation="DD_CIOS175" item="215" size="1" type="boolean" range_min="0" range_max="1" description="IOS175 : LV Earthing fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS176_" designation="DD_CIOS176" item="216" size="1" type="boolean" range_min="0" range_max="1" description="IOS176 : 1 LV Permanent or LV Prepared application fault (protection tripped, or contactor control/command inconsistency)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS177_" designation="DD_CIOS177" item="217" size="1" type="boolean" range_min="0" range_max="1" description="IOS177 : 30/45min shedding contactor application fault (loss of 1 traction or 1 car HVAC unit)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS178_" designation="DD_CIOS178" item="218" size="1" type="boolean" range_min="0" range_max="1" description="IOS178 : 30s shedding contactor application fault (loss of 1 air compressor, screens, full lights…)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS179_" designation="DD_CIOS179" item="219" size="1" type="boolean" range_min="0" range_max="1" description="IOS179 : 1 APC MV Status false or communication lost">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS180_" designation="DD_CIOS180" item="220" size="1" type="boolean" range_min="0" range_max="1" description="IOS180 : 1 APC Major failure (if Train with Driver and DDU, due to APC reset available)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS181_" designation="DD_CIOS181" item="221" size="1" type="boolean" range_min="0" range_max="1" description="IOS181 : Loss of at least two batteries ( isolated,  protection tripped, or not charging)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS182_" designation="DD_CIOS182" item="222" size="1" type="boolean" range_min="0" range_max="1" description="IOS182 : One Battery is isolated, or Battery protection tripped, or Battery not charging">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS183_" designation="DD_CIOS183" item="223" size="1" type="boolean" range_min="0" range_max="1" description="IOS183 : 2/3 APC MV Status false or communication lost">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS184_" designation="DD_CIOS184" item="224" size="1" type="boolean" range_min="0" range_max="1" description="IOS184 : 2 or more APC LV Status false  or communication lost">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS185_" designation="DD_CIOS185" item="225" size="1" type="boolean" range_min="0" range_max="1" description="IOS185 : 1 APC LV Status false or communication lost">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS186_" designation="DD_CIOS186" item="226" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS187_" designation="DD_CIOS187" item="227" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS188_" designation="DD_CIOS188" item="228" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS189_" designation="DD_CIOS189" item="229" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS190_" designation="DD_CIOS190" item="230" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS191_" designation="DD_CIOS191" item="231" size="1" type="boolean" range_min="0" range_max="1" description="IOS191 : Loss of video recorder">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS192_" designation="DD_CIOS192" item="232" size="1" type="boolean" range_min="0" range_max="1" description="IOS192 : Loss of cameras in at least one class">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS193_" designation="DD_CIOS193" item="233" size="1" type="boolean" range_min="0" range_max="1" description="IOS193 : Fault or Loss of at least one Frontal Camera">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS194_" designation="DD_CIOS194" item="234" size="1" type="boolean" range_min="0" range_max="1" description="IOS194 : At least 50% of internal cameras are faulty or lost communication">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS195_" designation="DD_CIOS195" item="235" size="1" type="boolean" range_min="0" range_max="1" description="IOS195 : Loss of All PEI in the same class">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS196_" designation="DD_CIOS196" item="236" size="1" type="boolean" range_min="0" range_max="1" description="IOS196 : Loss of at least 1 PEI in a class">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS197_" designation="DD_CIOS197" item="237" size="1" type="boolean" range_min="0" range_max="1" description="IOS197 : Loss of PA announcement to passenger">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS198_" designation="DD_CIOS198" item="238" size="1" type="boolean" range_min="0" range_max="1" description="IOS198 : Loss of LCD 16/9 in the same class">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS199_" designation="DD_CIOS199" item="239" size="1" type="boolean" range_min="0" range_max="1" description="IOS199 : Loss of all interior LCD compact displays in the same platform">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS200_" designation="DD_CIOS200" item="240" size="1" type="boolean" range_min="0" range_max="1" description="IOS200 : Loss of all superwides in the same doors platform">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS201_" designation="DD_CIOS201" item="241" size="1" type="boolean" range_min="0" range_max="1" description="IOS201 : Loss of one UMC">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS202_" designation="DD_CIOS202" item="242" size="1" type="boolean" range_min="0" range_max="1" description="IOS202 : Loss of All PEI in the same car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS203_" designation="DD_CIOS203" item="243" size="1" type="boolean" range_min="0" range_max="1" description="IOS203 : Loss of at least 1 PEI in a car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS204_" designation="DD_CIOS204" item="244" size="1" type="boolean" range_min="0" range_max="1" description="IOS204 : Loss of LCD 16/9 in the same car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS205_" designation="DD_CIOS205" item="245" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS206_" designation="DD_CIOS206" item="246" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS207_" designation="DD_CIOS207" item="247" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS208_" designation="DD_CIOS208" item="248" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS209_" designation="DD_CIOS209" item="249" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS210_" designation="DD_CIOS210" item="250" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS211_" designation="DD_CIOS211" item="251" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS212_" designation="DD_CIOS212" item="252" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS213_" designation="DD_CIOS213" item="253" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS214_" designation="DD_CIOS214" item="254" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS215_" designation="DD_CIOS215" item="255" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS216_" designation="DD_CIOS216" item="256" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS217_" designation="DD_CIOS217" item="257" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS218_" designation="DD_CIOS218" item="258" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS219_" designation="DD_CIOS219" item="259" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS220_" designation="DD_CIOS220" item="260" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS221_" designation="DD_CIOS221" item="261" size="1" type="boolean" range_min="0" range_max="1" description="IOS221 : Train Driving direction failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS222_" designation="DD_CIOS222" item="262" size="1" type="boolean" range_min="0" range_max="1" description="IOS222 : Motor/Brake Train line failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS223_" designation="DD_CIOS223" item="263" size="1" type="boolean" range_min="0" range_max="1" description="IOS223 : Traction Enable relay stuck closed failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS224_" designation="DD_CIOS224" item="264" size="1" type="boolean" range_min="0" range_max="1" description="IOS224 : PCE EB failure on single unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS225_" designation="DD_CIOS225" item="265" size="1" type="boolean" range_min="0" range_max="1" description="IOS225 : Faulty Speed Limit on at least one PCE">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS226_" designation="DD_CIOS226" item="266" size="1" type="boolean" range_min="0" range_max="1" description="IOS226 : Loss of traction and ED brake on One motor car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS227_" designation="DD_CIOS227" item="267" size="1" type="boolean" range_min="0" range_max="1" description="IOS227 : Loss of traction and ED brake on at least two motor car">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS228_" designation="DD_CIOS228" item="268" size="1" type="boolean" range_min="0" range_max="1" description="IOS228 : At least one minor failure on PCE">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS229_" designation="DD_CIOS229" item="269" size="1" type="boolean" range_min="0" range_max="1" description="IOS229 : At least one suspension NOK">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS230_" designation="DD_CIOS230" item="270" size="1" type="boolean" range_min="0" range_max="1" description="IOS230 : Faulty Direction Selection on at least one PCE">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS231_" designation="DD_CIOS231" item="271" size="1" type="boolean" range_min="0" range_max="1" description="IOS231 : Loss of traction or ED brake on one PCE (UM Configuration)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS232_" designation="DD_CIOS232" item="272" size="1" type="boolean" range_min="0" range_max="1" description="IOS232 : Loss of traction or ED brake on two (UM Configuration)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS233_" designation="DD_CIOS233" item="273" size="1" type="boolean" range_min="0" range_max="1" description="IOS233 : Loss of traction or ED brake on 3 PCE (UM Configuration)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS234_" designation="DD_CIOS234" item="274" size="1" type="boolean" range_min="0" range_max="1" description="IOS234 : Loss of traction or ED brake on 4 PCE (UM Configuration)">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS235_" designation="DD_CIOS235" item="275" size="1" type="boolean" range_min="0" range_max="1" description="IOS235 :Faulty auto test on at least one PCE">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS236_" designation="DD_CIOS236" item="276" size="1" type="boolean" range_min="0" range_max="1" description="IOS236 :Faulty pulse enable on at least one PCE or BCE on single unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS237_" designation="DD_CIOS237" item="277" size="1" type="boolean" range_min="0" range_max="1" description="IOS237 :Faulty pulse enable on at least one PCE or BCE on multiple unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS238_" designation="DD_CIOS238" item="278" size="1" type="boolean" range_min="0" range_max="1" description="IOS238 : PCE EB failure on multiple unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS239_" designation="DD_CIOS239" item="279" size="1" type="boolean" range_min="0" range_max="1" description="IOS239 : Traction Enable relay stuck open failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS240_" designation="DD_CIOS240" item="280" size="1" type="boolean" range_min="0" range_max="1" description="Spare">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS241_" designation="DD_CIOS241" item="281" size="1" type="boolean" range_min="0" range_max="1" description="IOS241: Communication Loss with one other CRS">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS242_" designation="DD_CIOS242" item="282" size="1" type="boolean" range_min="0" range_max="1" description="IOS242: One MPU have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS243_" designation="DD_CIOS243" item="283" size="1" type="boolean" range_min="0" range_max="1" description="IOS243: One TRS Or NETBOX have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS244_" designation="DD_CIOS244" item="284" size="1" type="boolean" range_min="0" range_max="1" description="IOS244: communication Loss with one  other BRIO">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS245_" designation="DD_CIOS245" item="285" size="1" type="boolean" range_min="0" range_max="1" description="IOS245: One PCE have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS246_" designation="DD_CIOS246" item="286" size="1" type="boolean" range_min="0" range_max="1" description="IOS246: One BCE have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS247_" designation="DD_CIOS247" item="287" size="1" type="boolean" range_min="0" range_max="1" description="IOS247: One ACE have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS248_" designation="DD_CIOS248" item="288" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS249_" designation="DD_CIOS249" item="289" size="1" type="boolean" range_min="0" range_max="1" description="IOS249: One DCU have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS250_" designation="DD_CIOS250" item="290" size="1" type="boolean" range_min="0" range_max="1" description="IOS250: One HVAC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS251_" designation="DD_CIOS251" item="291" size="1" type="boolean" range_min="0" range_max="1" description="IOS251: One UMC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS252_" designation="DD_CIOS252" item="292" size="1" type="boolean" range_min="0" range_max="1" description="IOS252: One ATC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS253_" designation="DD_CIOS253" item="293" size="1" type="boolean" range_min="0" range_max="1" description="IOS253: The EVR have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS254_" designation="DD_CIOS254" item="294" size="1" type="boolean" range_min="0" range_max="1" description="IOS254: More than one CRS have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS255_" designation="DD_CIOS255" item="295" size="1" type="boolean" range_min="0" range_max="1" description="IOS255: Loss of both MPU on a single US have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS256_" designation="DD_CIOS256" item="296" size="1" type="boolean" range_min="0" range_max="1" description="IOS256: More than one TRS Or NETBOX have a communication fault in US">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS257_" designation="DD_CIOS257" item="297" size="1" type="boolean" range_min="0" range_max="1" description="IOS257: More than one BRIO have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS258_" designation="DD_CIOS258" item="298" size="1" type="boolean" range_min="0" range_max="1" description="IOS258: More than one PCE have a communication fault in US">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS259_" designation="DD_CIOS259" item="299" size="1" type="boolean" range_min="0" range_max="1" description="IOS259: More than one BCE have a communication fault in US">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS260_" designation="DD_CIOS260" item="300" size="1" type="boolean" range_min="0" range_max="1" description="IOS260: More than one ACE have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS261_" designation="DD_CIOS261" item="301" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS262_" designation="DD_CIOS262" item="302" size="1" type="boolean" range_min="0" range_max="1" description="IOS262: More than one DCU have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS263_" designation="DD_CIOS263" item="303" size="1" type="boolean" range_min="0" range_max="1" description="IOS263: More than one HVAC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS264_" designation="DD_CIOS264" item="304" size="1" type="boolean" range_min="0" range_max="1" description="IOS264: More than one UMC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS265_" designation="DD_CIOS265" item="305" size="1" type="boolean" range_min="0" range_max="1" description="IOS265: More than one ATC have a communication fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS266_" designation="DD_CIOS266" item="306" size="1" type="boolean" range_min="0" range_max="1" description="IOS266: Consist network on failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS267_" designation="DD_CIOS267" item="307" size="1" type="boolean" range_min="0" range_max="1" description="IOS267:At least one software version discordancy fault ">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS268_" designation="DD_CIOS268" item="308" size="1" type="boolean" range_min="0" range_max="1" description="IOS268:Date and time update fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS269_" designation="DD_CIOS269" item="309" size="1" type="boolean" range_min="0" range_max="1" description="IOS269:DataPlug fault recording">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS270_" designation="DD_CIOS270" item="310" size="1" type="boolean" range_min="0" range_max="1" description="IOS270: Communication Loss of RIOM3 in occupied cab">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS271_" designation="DD_CIOS271" item="311" size="1" type="boolean" range_min="0" range_max="1" description="IOS271: Communication Loss of RIOM3 in not occupied cab">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS272_" designation="DD_CIOS272" item="312" size="1" type="boolean" range_min="0" range_max="1" description="IOS272 : Communication Loss of CRS5 in occupied cab">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS273_" designation="DD_CIOS273" item="313" size="1" type="boolean" range_min="0" range_max="1" description="IOS273 : Communication Loss of CRS5 in not occupied cab">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS274_" designation="DD_CIOS274" item="314" size="1" type="boolean" range_min="0" range_max="1" description="IOS274: Communication Loss of CRS 2">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS275_" designation="DD_CIOS275" item="315" size="1" type="boolean" range_min="0" range_max="1" description="IOS275: Communication Loss of CRS 1">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS276_" designation="DD_CIOS276" item="316" size="1" type="boolean" range_min="0" range_max="1" description="IOS276: More than one TRS Or NETBOX have a communication fault in UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS277_" designation="DD_CIOS277" item="317" size="1" type="boolean" range_min="0" range_max="1" description="Spare">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS278_" designation="DD_CIOS278" item="318" size="1" type="boolean" range_min="0" range_max="1" description="IOS278 : More than one PCE have a communication fault in UM">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS279_" designation="DD_CIOS279" item="319" size="1" type="boolean" range_min="0" range_max="1" description="IOS279: PECD have communication Fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS280_" designation="DD_CIOS280" item="320" size="1" type="boolean" range_min="0" range_max="1" description="IOS280 : Centralized maintenance with TrainTracer CFM is not available">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS281_" designation="DD_CIOS281" item="321" size="1" type="boolean" range_min="0" range_max="1" description="IOS281 : EVR Critical Fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS282_" designation="DD_CIOS282" item="322" size="1" type="boolean" range_min="0" range_max="1" description="IOS282 : EVR Major Fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS283_" designation="DD_CIOS283" item="323" size="1" type="boolean" range_min="0" range_max="1" description="IOS283 : EVR Minor Fault">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS284_" designation="DD_CIOS284" item="324" size="1" type="boolean" range_min="0" range_max="1" description="Spare">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS285_" designation="DD_CIOS285" item="325" size="1" type="boolean" range_min="0" range_max="1" description="Spare">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS286_" designation="DD_CIOS286" item="326" size="1" type="boolean" range_min="0" range_max="1" description="IOS286 : At least three brake units isolated on Single Unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS287_" designation="DD_CIOS287" item="327" size="1" type="boolean" range_min="0" range_max="1" description="IOS287 :Two brake units isolated on Multiple Unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS288_" designation="DD_CIOS288" item="328" size="1" type="boolean" range_min="0" range_max="1" description="IOS288 :Three brake units isolated on Multiple Unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS289_" designation="DD_CIOS289" item="329" size="1" type="boolean" range_min="0" range_max="1" description="IOS289 :At least four brake units isolated on Multiple Unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS290_" designation="DD_CIOS290" item="330" size="1" type="boolean" range_min="0" range_max="1" description="IOS290 :ATC EB command discordance">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS291_" designation="DD_CIOS291" item="331" size="1" type="boolean" range_min="0" range_max="1" description="IOS291 :Major Fault on at least 2 brake units on Multiple Unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS292_" designation="DD_CIOS292" item="332" size="1" type="boolean" range_min="0" range_max="1" description="IOS292  :Mechanical WSP not available on 1 or 2 axle/bogie/car on Multiple unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS293_" designation="DD_CIOS293" item="333" size="1" type="boolean" range_min="0" range_max="1" description="IOS293  :Mechanical WSP not available on more than 2 axle/bogie/car on Multiple unit">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS294_" designation="DD_CIOS294" item="334" size="1" type="boolean" range_min="0" range_max="1" description="IOS294 : Consecutive emergency brake application during predefined time">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS295_" designation="DD_CIOS295" item="335" size="1" type="boolean" range_min="0" range_max="1" description="IOS295 : BCE Echelon Simple Failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS296_" designation="DD_CIOS296" item="336" size="1" type="boolean" range_min="0" range_max="1" description="IOS296 : BCE Echelon Double Failure">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS297_" designation="DD_CIOS297" item="337" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS298_" designation="DD_CIOS298" item="338" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS299_" designation="DD_CIOS299" item="339" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DD_CIOS300_" designation="DD_CIOS300" item="340" size="1" type="boolean" range_min="0" range_max="1" description="Spare / Not used">
+				<uevol:enumeration>
+					<uevol:item name="No alarm" value="0"/>
+					<uevol:item name="Alarm" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="RST_EB_CAUSES1" designation="DIFFERENT EB CAUSES" item="341" size="8" type="uint8" range_min="0" range_max="255" description="0000 0000 0000 0000b = No EB cause; XXXX XXXX XXXX XXX1b = Emergency brake from pushbutton activation; XXXX XXXX XXXX XX1Xb= Emergency brake from ATC; XXXX XXXX XXXX X1XXb= Emergency brake from LMRG; XXXX XXXX XXXX  1XXXb= Emergency brake from deadman; XXXX XXXX XXX1 XXXXb= Emergency brake from obstacle; XXXX XXXX XX1X XXXXb = Emergency brake from no cabin active detection; XXXX XXXX X1XX XXXXb= Emergency brake from another origin; XXXX XXXX 1XXX XXXXb= Emergency brake from Over speed; XXXX XXX1 XXXX XXXXb= Emergency brake from derailment;">
+				<uevol:enumeration>
+					<uevol:item name="No EB CAUSE" value="0"/>
+					<uevol:item name="Emergency brake from pushbutton activation " value="2"/>
+					<uevol:item name="Emergency brake from ATC" value="4"/>
+					<uevol:item name="Emergency brake from LMRG" value="8"/>
+					<uevol:item name="Emergency brake from deadman" value="16"/>
+					<uevol:item name="Emergency brake from obstacle" value="32"/>
+					<uevol:item name="Emergency brake from no cabin active detection" value="64"/>
+					<uevol:item name="Emergency brake from another origin" value="128"/>
+					<uevol:item name="Emergency brake from Over speed" value="256"/>
+					<uevol:item name="Emergency brake from derailment" value="512"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="RST_EB_CAUSES2" designation="DIFFERENT EB CAUSES" item="342" size="8" type="uint8" range_min="0" range_max="255" description="0000 0000 0000 0000b = No EB cause; XXXX XXXX XXXX XXX1b = Emergency brake from pushbutton activation; XXXX XXXX XXXX XX1Xb= Emergency brake from ATC; XXXX XXXX XXXX X1XXb= Emergency brake from LMRG; XXXX XXXX XXXX  1XXXb= Emergency brake from deadman; XXXX XXXX XXX1 XXXXb= Emergency brake from obstacle; XXXX XXXX XX1X XXXXb = Emergency brake from no cabin active detection; XXXX XXXX X1XX XXXXb= Emergency brake from another origin; XXXX XXXX 1XXX XXXXb= Emergency brake from Over speed; XXXX XXX1 XXXX XXXXb= Emergency brake from derailment;">
+				<uevol:enumeration>
+					<uevol:item name="No EB CAUSE" value="0"/>
+					<uevol:item name="Emergency brake from pushbutton activation " value="2"/>
+					<uevol:item name="Emergency brake from ATC" value="4"/>
+					<uevol:item name="Emergency brake from LMRG" value="8"/>
+					<uevol:item name="Emergency brake from deadman" value="16"/>
+					<uevol:item name="Emergency brake from obstacle" value="32"/>
+					<uevol:item name="Emergency brake from no cabin active detection" value="64"/>
+					<uevol:item name="Emergency brake from another origin" value="128"/>
+					<uevol:item name="Emergency brake from Over speed" value="256"/>
+					<uevol:item name="Emergency brake from derailment" value="512"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="WAKE_UP_STATUS" designation="Train wake-up status (Train Preparation status)" item="343" size="8" type="uint8" range_min="0" range_max="255" description="TCMS_CC_ATS_TRAIN_PREPARATION_STATUS available on CC_TCMSIt is partially redundant with the CC combined test status but considered as purely a RST status. ">
+				<uevol:enumeration>
+					<uevol:item name="Unknown" value="0"/>
+					<uevol:item name="Sleep in  progress" value="1"/>
+					<uevol:item name="Sleeping fault" value="2"/>
+					<uevol:item name="Wakeup in progress" value="4"/>
+					<uevol:item name="Wakeup complete and successful" value="8"/>
+					<uevol:item name="Wakeup failure" value="16"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="CONSECUTIVE_EB" designation="Consecutive EB request" item="344" size="1" type="boolean" range_min="0" range_max="1" description="Base on this information the ATO shall maintain the EB until acknowledgement by the operator (through Remote reset EB control)">
+				<uevol:enumeration>
+					<uevol:item name="Not request" value="0"/>
+					<uevol:item name="Request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="REDUCE_SPEED" designation="Reduced Speed Request" item="345" size="1" type="boolean" range_min="0" range_max="1" description="Rolling may request Reduced Speed Request in case of failure as for example consecutive EB or traction performance limitation resulting of a reduction of maximum running speed by the ATO.">
+				<uevol:enumeration>
+					<uevol:item name="Not request" value="0"/>
+					<uevol:item name="Request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="WASHING_MODE_STATUS" designation="Washing_mode_status" item="346" size="1" type="boolean" range_min="0" range_max="1" description="Wash mode applied by RST">
+				<uevol:enumeration>
+					<uevol:item name="Otherwise" value="0"/>
+					<uevol:item name="RST in wash mode" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="RST_TRAIN_DOORS_SEQUENCE_MANAGEMENT_QoS" designation="Train_door_sequence_management_QoS" item="347" size="8" type="uint8" range_min="0" range_max="12" description="Number of opening and closing train doors successfully opened/closed during passenger exchange at each platform stop of a trip.This data participates to the QoS related to QCDM and the SDM calculation (successful door movements).(reset of counter after departure of the train)">
+				<uevol:enumeration>
+					<uevol:item name="0 of successful door movement" value="0"/>
+					<uevol:item name="1 of successful door movement" value="1"/>
+					<uevol:item name="2 of successful door movement" value="2"/>
+					<uevol:item name="3 of successful door movement" value="3"/>
+					<uevol:item name="4 of successful door movement" value="4"/>
+					<uevol:item name="5 of successful door movement" value="5"/>
+					<uevol:item name="6 of successful door movement" value="6"/>
+					<uevol:item name="7 of successful door movement" value="7"/>
+					<uevol:item name="8 of successful door movement" value="8"/>
+					<uevol:item name="9 of successful door movement" value="9"/>
+					<uevol:item name="10 of successful door movement" value="10"/>
+					<uevol:item name="11 of successful door movement" value="11"/>
+					<uevol:item name="12 of successful door movement" value="12"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="HV_PRESENCE" designation="High Voltage Presence" item="348" size="1" type="boolean" range_min="0" range_max="1" description="High voltage presence on the full trainset = 0: No High voltage presence on all the train  1:  voltage presence on all the train">
+				<uevol:enumeration>
+					<uevol:item name="no HV presence" value="0"/>
+					<uevol:item name="HV presence" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="HV_ABSENCE" designation="HV absence" item="349" size="1" type="boolean" range_min="0" range_max="1" description="High voltage absence on the full trainset ">
+				<uevol:enumeration>
+					<uevol:item name="no HV absence" value="0"/>
+					<uevol:item name="HV absence" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOOR_CLOSING_FAILURE" designation="Train door failure in  closing " item="350" size="1" type="boolean" range_min="0" range_max="1" description="">
+				<uevol:enumeration>
+					<uevol:item name=" failure" value="1"/>
+					<uevol:item name=" not failure" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_DOOR_OPENING_FAILURE" designation="train doors failure in opening " item="351" size="1" type="boolean" range_min="0" range_max="1" description="">
+				<uevol:enumeration>
+					<uevol:item name=" failure" value="1"/>
+					<uevol:item name=" not failure" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TOO_LONG_DOCKING" designation="Too long docking" item="352" size="1" type="boolean" range_min="0" range_max="1" description="">
+				<uevol:enumeration>
+					<uevol:item name=" too long docking " value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="CORRECT_DOCKING" designation="Correct docking" item="353" size="1" type="boolean" range_min="0" range_max="1" description="">
+				<uevol:enumeration>
+					<uevol:item name=" correct docking " value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="UNEXPECTED_STOP" designation="Unexpected stop in interstation" item="354" size="1" type="boolean" range_min="0" range_max="1" description="This alarm is also raised when train stopped at SSP before platform due to station restriction.">
+				<uevol:enumeration>
+					<uevol:item name=" stop" value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TEST_MODE_STATUS" designation="Test mode status" item="355" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of the test mode status by CC">
+				<uevol:enumeration>
+					<uevol:item name=" no test mode" value="0"/>
+					<uevol:item name=" test mode" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TOO_LOW_ACCELERATION" designation="Alarm for too low acceleration" item="356" size="1" type="boolean" range_min="0" range_max="1" description="Monitoring performance of RST acceleration and braking (from check_actual perf)">
+				<uevol:enumeration>
+					<uevol:item name=" alarm " value="1"/>
+					<uevol:item name=" no alarm" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TOO_HIGH_BRAKING" designation="Alarm for too high braking" item="357" size="1" type="boolean" range_min="0" range_max="1" description="Monitoring performance of RST acceleration and braking (from check_actual perf)">
+				<uevol:enumeration>
+					<uevol:item name=" alarm " value="1"/>
+					<uevol:item name=" no alarm" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TOO_LOW_BRAKING" designation="Alarm for too low braking" item="358" size="1" type="boolean" range_min="0" range_max="1" description="Monitoring performance of RST acceleration and braking (from check_actual perf)">
+				<uevol:enumeration>
+					<uevol:item name=" alarm " value="1"/>
+					<uevol:item name=" no alarm" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="COUPLING_AVAILABLE_CAB_1" designation="Automatic coupling possible on Cab 1" item="359" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function">
+				<uevol:enumeration>
+					<uevol:item name=" possible" value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="COUPLING_AVAILABLE_CAB_2" designation="Automatic coupling possible on Cab 2" item="360" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function">
+				<uevol:enumeration>
+					<uevol:item name=" possible" value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="COUPLING_NOT_AVAILABLE" designation="Coupling not authorised" item="361" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function">
+				<uevol:enumeration>
+					<uevol:item name=" not authorised" value="1"/>
+					<uevol:item name="Otherwise" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="MAINTAIN_DOORS_CLOSE_COMPLETED" designation="Maintain doors closed completed" item="362" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function. Feedback of the maintain doors closed control. 5hall also included the status of the status of train doors (TDCL)">
+				<uevol:enumeration>
+					<uevol:item name=" false" value="0"/>
+					<uevol:item name=" true" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="CAB_DEACTIVATION_COMPLETE" designation="Cab deactivation completed" item="363" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function. Feedback of the remote cabin deactivation control. ">
+				<uevol:enumeration>
+					<uevol:item name=" false" value="0"/>
+					<uevol:item name=" true" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="NO_ACTIVE_CAB" designation="No active cabine and train door closed" item="364" size="1" type="boolean" range_min="0" range_max="1" description="For automatic coupling function. Feedback for deactivation cabine and door forced closed on the rescued train. ">
+				<uevol:enumeration>
+					<uevol:item name=" false" value="0"/>
+					<uevol:item name=" true" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="RESCUE_COUPLING_FAILURE" designation="Automatic rescue coupling failed" item="365" size="1" type="boolean" range_min="0" range_max="1" description="Alarm raised by ATO in case of automatic rescue coupling failed">
+				<uevol:enumeration>
+					<uevol:item name=" not failed" value="0"/>
+					<uevol:item name=" failed" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="DEFAULT_TM_CAUSES" designation="Default TM cause" item="366" size="8" type="uint8" range_min="0" range_max="255" description="Cause of the default TM considered by the CC">
+				<uevol:enumeration>
+					<uevol:item name=" no default TM" value="0"/>
+					<uevol:item name=" Intercom call" value="1"/>
+					<uevol:item name=" evacuation " value="2"/>
+					<uevol:item name=" station missed" value="3"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="EB_RELEASE_REQUEST_FBK" designation="Remote EB release request feedback" item="367" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of the remote control EB release request">
+				<uevol:enumeration>
+					<uevol:item name=" No EB release;" value="0"/>
+					<uevol:item name=" EB release" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="PROHIBITION_UTO_AUTHORISATION_FBK" designation="Remote prohibition UTO  driving mode authorisation feedback" item="368" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of remote prohibition UTO driving mode authorisation">
+				<uevol:enumeration>
+					<uevol:item name=" UTO is authorised " value="0"/>
+					<uevol:item name=" UTO is forbidden" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="PROHIBITION_ATPM_AUTHORISATION_FBK" designation="Remote prohibition ATPM driving mode authorisation feedback" item="369" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of remote prohibition ATPM driving mode authorisation">
+				<uevol:enumeration>
+					<uevol:item name=" ATMP is authorised" value="0"/>
+					<uevol:item name=" ATPM is forbidden" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="WASHING_MODE_STATE_REQUEST_FBK" designation="Washing mode Request feedback" item="370" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of the remote control">
+				<uevol:enumeration>
+					<uevol:item name=" No washing" value="0"/>
+					<uevol:item name=" Train is going to wash plant for washing" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="STATION_RESTRICTION_INHIBITED_FBK" designation="Station Restriction inhibited feedback" item="371" size="1" type="boolean" range_min="0" range_max="1" description="Feedback of remote control station restriction inhibition.">
+				<uevol:enumeration>
+					<uevol:item name=" activated " value="0"/>
+					<uevol:item name=" inhibited" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="372" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE2" designation="Spare byte" item="373" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE3" designation="Spare byte" item="374" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE4" designation="Spare byte" item="375" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE5" designation="Spare byte" item="376" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE6" designation="Spare byte" item="377" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE7" designation="Spare byte" item="378" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:description>Rolling Stock Status Report</uevol:description>
+		</uevol:message>
+	</uevol:static-description>
+	<uevol:static-description interface_name="ATS_CC_1_2">
+		<!-- <uevol:target_id_list>
+			<target_id>1</target_id>
+			<target_id>2</target_id>
+		</uevol:target_id_list> -->
+		<uevol:direction source="ATS" destination="CC"/>
+		<uevol:message size-in="bit" name="Rolling Stock Setting Request" id="9" protocol="GSA" type="REQ" application-stack="1" transport-stack="1">
+			<uevol:field field-type="simple" name="MESSAGE_VALIDITY" designation="Message validity" item="1" size="1" type="boolean" range_min="0" range_max="1" description="This field indicates that the content of this message is valid when it is equal to 0." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="project_itf_ver" designation="project interface version, to define the messages mapping to allow data migration" item="2" size="8" type="uint8" range_min="0" range_max="255" description="project interface version, to define the messages mapping to allow data migration" vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TRAIN_OPERATING_MODE_REQUEST" designation="Train Operating Mode request" item="3" size="8" type="uint8" range_min="0" range_max="255" description="Train Operating Mode requested by ATS: 00000000b: No Train Operating mode requested 00000001b: Depot and Mainline OFF Service requested 00000010b: Mainline IN Service requested 00000100b: Standby requested 00001000b: Asleep requested 00010000b: Waked-up requested 00100000b: Maintenance requested 01000000b: Washing requested" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No Train Operating mode requested" value="0"/>
+					<uevol:item name="Depot and Mainline OFF Service" value="1"/>
+					<uevol:item name="Mainline IN Service" value="2"/>
+					<uevol:item name="Standby" value="4"/>
+					<uevol:item name="Asleep" value="8"/>
+					<uevol:item name="Waked-up" value="16"/>
+					<uevol:item name="Maintenance" value="32"/>
+					<uevol:item name="Washing" value="64"/>
+				</uevol:enumeration>
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="REQUESTED_DST_UTC_OFFSET" designation="Requested DST_UTC_Offset" item="4" size="32" type="int32" quantum="1" range_min="-86400" range_max="86400" unit="second" description="Offset between UTC time (Universal Time Coordinated) and DST (Daylight Saving Time) requested to ATS." vital="0">
+				<uevol:uevol type="generic"/>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door1" designation="Opening inhibition request of train door 1 on side B" item="5" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 1 inhibition request" vital="0" unit="">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 1 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door2" designation="Opening inhibition request of train door 2 on side A" item="6" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 2 inhibition request" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 2 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door3" designation="Opening inhibition request of train door 3 on side A" item="7" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 3 inhibition request" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 3 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door4" designation="Opening inhibition request of train door 4 on side A" item="8" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 4 inhibition request" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 4 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door5" designation="Opening inhibition request of train door 5 on side A" item="9" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 5 inhibition request" vital="0">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 5 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door6" designation="Opening inhibition request of train door 6 on side A" item="10" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 6 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 6 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door7" designation="Opening inhibition request of train door 7 on side A" item="11" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 7 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 7 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door8" designation="Opening inhibition request of train door 8 on side A" item="12" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 8 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 8 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door9" designation="Opening inhibition request of train door 9 on side A" item="13" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 9 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 9 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door10" designation="Opening inhibition request of train door 10 on side A" item="14" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 10 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 10 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door11" designation="Opening inhibition request of train door 11 on side A" item="15" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 11 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 11 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_A_Door12" designation="Opening inhibition request of train door 12 on side A" item="16" size="1" type="boolean" range_min="0" range_max="1" description="Train side A : Door 12 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 12 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door1" designation="Opening inhibition request of train door 1 on side B" item="17" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 0 : Door 1 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 1 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door2" designation="Opening inhibition request of train door 2 on side B" item="18" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 1 : Door 2 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 2 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door3" designation="Opening inhibition request of train door 3 on side B" item="19" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 2 : Door 3 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 3 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door4" designation="Opening inhibition request of train door 4 on side B" item="20" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 3 : Door 4 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 4 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door5" designation="Opening inhibition request of train door 5 on side B" item="21" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 4 : Door 5 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 5 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door6" designation="Opening inhibition request of train door 6 on side B" item="22" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 5 : Door 6 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 6 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door7" designation="Opening inhibition request of train door 7 on side B" item="23" size="1" type="boolean" range_min="0" range_max="1" description=' description="Train side B : bit 6 : Door 7 inhibition request'>
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 7 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door8" designation="Opening inhibition request of train door 8 on side B" item="24" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 7 : Door 8 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 8 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door9" designation="Opening inhibition request of train door 9 on side B" item="25" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 8 : Door 9 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 9 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door10" designation="Opening inhibition request of train door 10 on side B" item="26" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 9 : Door 10 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 10 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door11" designation="Opening inhibition request of train door 11 on side B" item="27" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 10 : Door 11 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 11 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="OPENING_INHIBITION_REQUEST_OF_TRAIN_DOORS_ON_SIDE_B_Door12" designation="Opening inhibition request of train door 12 on side B" item="28" size="1" type="boolean" range_min="0" range_max="1" description="Train side B : bit 11 : Door 12 inhibition request">
+				<uevol:enumeration>
+					<uevol:item name="No door inhibition request" value="0"/>
+					<uevol:item name="Door 12 inhibition request" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="MAINTAIN_DOORS_CLOSED" designation="Maintain doors  closed request" item="29" size="1" type="boolean" range_min="0" range_max="1" description="For automatic rescue coupling">
+				<uevol:enumeration>
+					<uevol:item name=" maintain control" value="1"/>
+					<uevol:item name=" no maintain control" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="ACTIVE_CAB_DEACTIVATION" designation="Maintain deactivate active cabine request" item="30" size="1" type="boolean" range_min="0" range_max="1" description="For automatic rescue coupling">
+				<uevol:enumeration>
+					<uevol:item name=" deactivation" value="1"/>
+					<uevol:item name=" activation " value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="UTO_PROHIBITION" designation="Remote prohibition UTO driving mode authorisation" item="31" size="1" type="boolean" range_min="0" range_max="1" description="Remote probihition train driving mode function">
+				<uevol:enumeration>
+					<uevol:item name=" UTO is forbidden" value="1"/>
+					<uevol:item name=" UTO is authorised" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="ATPM_PROHIBITION" designation="Remote prohibition ATPM driving mode authorisation" item="32" size="1" type="boolean" range_min="0" range_max="1" description="Remote probihition train driving mode function">
+				<uevol:enumeration>
+					<uevol:item name=" ATPM is forbidden" value="1"/>
+					<uevol:item name=" ATMP is authorised" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="STATION_RESTRICTION_INHIBITION" designation="Station restriction inhibited" item="33" size="1" type="boolean" range_min="0" range_max="1" description="By default, the function is activated. ">
+				<uevol:enumeration>
+					<uevol:item name=" inhibited" value="1"/>
+					<uevol:item name=" activated" value="0"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="TEST_MODE_REQUEST" designation="Test mode request" item="34" size="1" type="boolean" range_min="0" range_max="1" description="Test mode function (CC does not open PSD in this mode)">
+				<uevol:enumeration>
+					<uevol:item name=" No test mode" value="0"/>
+					<uevol:item name=" Test mode" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="WASHING_STATE_REQUEST" designation="Washing mode request" item="35" size="1" type="boolean" range_min="0" range_max="1" description="Inform the train to close its dampers">
+				<uevol:enumeration>
+					<uevol:item name=" No washing" value="0"/>
+					<uevol:item name=" Train is going to wash plant for washing" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="EB_RELEASE_REQUEST" designation="Remote EB Release Request " item="36" size="1" type="boolean" range_min="0" range_max="1" description="Remote EB Release request from ATS: The status associated to this message RST->ATS is already provided by CC via the generic CC-ATS message Emergency Braking application status">
+				<uevol:enumeration>
+					<uevol:item name=" No Remote EB  release requested;" value="0"/>
+					<uevol:item name=" Remote EB release  requested;" value="1"/>
+				</uevol:enumeration>
+			</uevol:field>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="37" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="38" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="39" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="40" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="41" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="42" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:field field-type="simple" name="SPARE_BYTE1" designation="Spare byte" item="43" size="1" type="boolean" range_min="0" range_max="1" description="Spare byte to foresee new Train Operating Modes requests." vital="0"/>
+			<uevol:description>Rolling Stock Setting Request</uevol:description>
+		</uevol:message>
+	</uevol:static-description>
+</uevol:ICD>

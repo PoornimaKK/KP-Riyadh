@@ -1,0 +1,7 @@
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IconisBin8\ReleaseU\IDP_RiyadhAnalyzer.dll
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IconisBin8\ReleaseU\IDP_RiyadhAnalyzer.pdb
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IDP_Riyadh\IDP_RiyadhAnalyzer\obj\Unicode Release\IDP_RiyadhAnalyzer.csprojResolveAssemblyReference.cache
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IDP_Riyadh\IDP_RiyadhAnalyzer\obj\Unicode Release\IconisUtilities.IconisAnalyzer.resources
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IDP_Riyadh\IDP_RiyadhAnalyzer\obj\Unicode Release\IDP_RiyadhAnalyzer.csproj.GenerateResource.Cache
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IDP_Riyadh\IDP_RiyadhAnalyzer\obj\Unicode Release\IDP_RiyadhAnalyzer.dll
+D:\BuildManagerATS\Sw_Riyadh_IDP,2.03.3\Sw_Riyadh_IDP\IDP_Riyadh\IDP_RiyadhAnalyzer\obj\Unicode Release\IDP_RiyadhAnalyzer.pdb

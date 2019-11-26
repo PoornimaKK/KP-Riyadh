@@ -1,0 +1,1952 @@
+<ObjectPropertyModule>
+	<Classes>
+		<Class name="HMITrainAlarmMonitored">
+			<Objects>			
+				<Object name="TrainXXX.RSAlarm.OnBoardATCMaint" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_119_ONBOARDATCMAINTENANCENEEDED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>			
+				<Object name="TrainXXX.RSAlarm.TrainDoorOpening" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_TRAIN_DOOR_OPENING_FAILURE</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>			
+				<Object name="TrainXXX.RSAlarm.TrainDoorClosing" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_TRAIN_DOOR_CLOSING_FAILURE</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>								
+				<Object name="TrainXXX.RSAlarm.AsleepStatus" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_ASLEEP_STATUS</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>	
+				<Object name="TrainXXX.RSAlarm.WakeupFailure" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_WAKE_UP_STATUS</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>					
+				<Object name="TrainXXX.RSAlarm.CCTimeDesynch" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_111_CCTIMEDESYNCHRONIZED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>		
+				<Object name="TrainXXX.RSAlarm.ExpectedSpeed" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_TOO_LOW_ACCELERATION</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.LowBraking" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_TOO_LOW_BRAKING</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.HighBraking" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_TOO_HIGH_BRAKING</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.ReducedSpeed" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_REDUCE_SPEED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.UnexpectedStop" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_UNEXPECTED_STOP</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause10" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_10</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause1" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_1</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause2" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_2</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause3" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_3</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause4" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_4</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause5" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_5</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause6" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_6</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause7" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_7</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause8" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_8</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.EBCause9" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_EB_CAUSE_9</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause1" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_1</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause2" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_2</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause3" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_3</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause4" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_4</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause5" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_5</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause6" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_6</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause7" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_7</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause8" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_8</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.RSTEBCause9" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_RST_EB_CAUSE_9</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.ETFFailure" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_ETF_FAILURE</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.CCAlarm.MissedStop" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_003_TRAINSTOPNOTDOCKED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.CCAlarm.MissedStopUnknown" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_003_TRAINSTOPNOTDOCKEDPOINTUNKNOWN</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.CCAlarm.PEEDNT" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_PEED_TRIGGERED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS001" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS001</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS002" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS002</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS003" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS003</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS004" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS004</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS005" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS005</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS011" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS011</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS012" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS012</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS013" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS013</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS014" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS014</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS015" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS015</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS016" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS016</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS017" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS017</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS018" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS018</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS019" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS019</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS020" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS020</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS021" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS021</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS022" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS022</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS023" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS023</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS024" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS024</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS025" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS025</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS026" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS026</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS027" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS027</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS028" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS028</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS029" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS029</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS030" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS030</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS035" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS035</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS036" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS036</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS037" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS037</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS038" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS038</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS039" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS039</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS040" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS040</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS041" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS041</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS051" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS051</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS052" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS052</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS061" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS061</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS062" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS062</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS063" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS063</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS064" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS064</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS065" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS065</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS066" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS066</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS067" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS067</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS068" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS068</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS069" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS069</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS070" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS070</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS071" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS071</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS072" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS072</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS081" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS081</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS082" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS082</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS083" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS083</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS084" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS084</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS085" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS085</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS086" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS086</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS087" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS087</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS088" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS088</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS089" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS089</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS090" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS090</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS091" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS091</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS092" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS092</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS093" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS093</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS094" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS094</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS095" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS095</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS096" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS096</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS111" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS111</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS121" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS121</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS122" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS122</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS123" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS123</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS124" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS124</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS125" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS125</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS126" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS126</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS143" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS143</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS144" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS144</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS145" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS145</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS146" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS146</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS147" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS147</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS148" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS148</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS149" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS149</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS161" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS161</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS162" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS162</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS171" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS171</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS172" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS172</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS173" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS173</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS174" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS174</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS175" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS175</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS176" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS176</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS177" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS177</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS178" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS178</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS179" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS179</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS180" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS180</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS181" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS181</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS182" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS182</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS183" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS183</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS184" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS184</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS185" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS185</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS191" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS191</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS192" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS192</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS193" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS193</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS194" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS194</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS195" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS195</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS196" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS196</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS197" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS197</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS198" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS198</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS199" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS199</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS200" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS200</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS201" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS201</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS202" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS202</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS203" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS203</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS204" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS204</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS221" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS221</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS222" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS222</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS223" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS223</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS224" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS224</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS225" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS225</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS226" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS226</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS227" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS227</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS228" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS228</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS229" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS229</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS230" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS230</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS231" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS231</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS232" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS232</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS233" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS233</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS234" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS234</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS235" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS235</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS236" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS236</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS237" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS237</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS238" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS238</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS239" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS239</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS241" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS241</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS242" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS242</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS243" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS243</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS244" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS244</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS245" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS245</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS246" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS246</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS247" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS247</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS249" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS249</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS250" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS250</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS251" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS251</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS252" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS252</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS253" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS253</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS254" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS254</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS255" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS255</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS256" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS256</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS257" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS257</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS258" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS258</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS259" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS159</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS260" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS260</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS262" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS262</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS263" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS263</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS264" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS264</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS265" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS265</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS266" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS266</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS267" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS267</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS268" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS268</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS269" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS269</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS270" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS270</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS271" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS271</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS272" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS272</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS273" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS273</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS274" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS274</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS275" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS275</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS276" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS276</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS278" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS278</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS279" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS279</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS280" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS280</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS281" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS281</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS282" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS282</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS283" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS283</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS286" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS286</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS287" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS287</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS288" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS288</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS289" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS289</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS290" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS290</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS291" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS291</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS292" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS292</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS293" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS293</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS294" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS294</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS295" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS295</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarmIOS296" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_IOS296</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.AbnormalTrainStop" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">MSG_CCM_118_ABNORMALTRAINSTOPPING</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.TMMAlarm.NewTrainMovementReq" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">TMMAE_TMR_RESEND</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.DYNAMIC_EB_PASSED" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">ALM_DYNAMIC_EB_PASSED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.DYNAMIC_EB_FAILED" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">DYNAMIC_EB_FAILED</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+				<Object name="TrainXXX.RSAlarm.LEAVE_NOW_ATS_COMMUNICATION" rules="update_or_create">
+					<Properties>
+						<Property name="TrainIdentifier" dt="string">TrainXXX</Property>
+						<Property name="AcceptedKeys" dt="string">LEAVE_NOW_ATS_COMMUNICATION</Property>
+						<MultiLingualProperty name="Name">
+							<MultiLingualValue roleId="-1" localeId="1033">TrainXXX</MultiLingualValue>
+						</MultiLingualProperty>
+					</Properties>
+				</Object>
+			</Objects>
+		</Class>
+	</Classes>
+</ObjectPropertyModule>

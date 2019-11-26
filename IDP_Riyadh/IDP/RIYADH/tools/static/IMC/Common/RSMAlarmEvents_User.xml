@@ -1,0 +1,2303 @@
+<!-- edited with XMLSpy v2016 rel. 2 (x64) (http://www.altova.com) by ALSTOM (ALSTOM TIS) -->
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by letierce (alstom) -->
+<MODULES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="HMITrainAlarmMonitored.xsd">
+	<MODULE ID="RSM_U400">
+		<KEYS>
+			<KEY ID="ALM_ASLEEP_STATUS" EXTRA="ASLEEP_STATUS##0xff##equals 2##not_equals 2" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train%s Asleep request failed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 2.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is not equal to 2.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_WAKE_UP_STATUS" EXTRA="WAKE_UP_STATUS##0xff##equals 16##not_equals 16" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train%s wake-up failed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 16.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is not equal to 16.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_TRAIN_DOOR_OPENING_FAILURE" EXTRA="TRAIN_DOOR_OPENING_FAILURE##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train%s doors opening failed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_TRAIN_DOOR_CLOSING_FAILURE" EXTRA="TRAIN_DOOR_CLOSING_FAILURE##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train%s doors opening failed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_CC_COMBINED_STATUS" EXTRA="CC_COMBINED_STATUS##0xff##equals 2##not_equals 2" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train%s unvailable, combined test failed on rolling stock</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 2.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is NOT equal to 2.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_STATION_RESTRICTION_INHIBITED_FBK" EXTRA="STATION_RESTRICTION_INHIBITED_FBK##0x01##equals 0##equals 1" TypeAlarm="MONITOR" CanBeUserReport="TRUE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<USERREPORT/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Station Restriction Activated on Train %s</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="1">
+					<PARAMETER POSITION="1" TYPE="BSTR" VALUE="TrainIdentifier"/>
+				</PARAMETERS>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 0.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 1.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_TOO_LOW_ACCELERATION" EXTRA="TOO_LOW_ACCELERATION##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Acceleration lower than ordered</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_TOO_LOW_BRAKING" EXTRA="TOO_LOW_BRAKING##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Braking lower than ordered</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_TOO_HIGH_BRAKING" EXTRA="TOO_HIGH_BRAKING##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Braking higher than ordered</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_REDUCE_SPEED" EXTRA="REDUCE_SPEED##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Reduced speed required</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_UNEXPECTED_STOP" EXTRA="UNEXPECTED_STOP##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Unexpected stop in interstation</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_1" EXTRA="EB_CAUSES##0xff##equals 1##not_equals 1" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to train doors unlocked</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_10" EXTRA="EB_CAUSES##0xff##equals 10##not_equals 10" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to Rolling Stock</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_2" EXTRA="EB_CAUSES##0xff##equals 2##not_equals 2" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to train PSD unlocked</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 2.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_3" EXTRA="EB_CAUSES##0xff##equals 3##not_equals 3" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to train hold applied</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 3.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_4" EXTRA="EB_CAUSES##0xff##equals 4##not_equals 4" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to train over-speed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 4.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_5" EXTRA="EB_CAUSES##0xff##equals 5##not_equals 5" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to train restrictive emergency stop area</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 5.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_6" EXTRA="EB_CAUSES##0xff##equals 6##not_equals 6" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to fatal fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 6.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_7" EXTRA="EB_CAUSES##0xff##equals 7##not_equals 7" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to safety immobilisation not obtained</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 7.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_8" EXTRA="EB_CAUSES##0xff##equals 8##not_equals 8" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to rollback</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 8.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_EB_CAUSE_9" EXTRA="EB_CAUSES##0xff##equals 9##not_equals 9" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MAX" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB due to changing mode while running</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 9.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_1" EXTRA="RST_EB_CAUSES##0xff##equals 1##not_equals 1" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from pushbutton activation</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit0 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit0 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_2" EXTRA="RST_EB_CAUSES##0xff##equals 2##not_equals 2" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from ATC</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit1 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit1 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_3" EXTRA="RST_EB_CAUSES##0xff##equals 4##not_equals 4" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from LMRG</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit2 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit2 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_4" EXTRA="RST_EB_CAUSES##0xff##equals 8##not_equals 8" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from deadman</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit3 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit3 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_5" EXTRA="RST_EB_CAUSES##0xff##equals 16##not_equals 16" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from obstacle</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit4 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit4 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_6" EXTRA="RST_EB_CAUSES##0xff##equals 32##not_equals 32" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from no cabin active detection</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit5 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit5 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_7" EXTRA="RST_EB_CAUSES##0xff##equals 64##not_equals 64" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from another origin</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit6 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit6 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_8" EXTRA="RST_EB_CAUSES##0xff##equals 128##not_equals 128" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from Over speed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit7 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit7 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_RST_EB_CAUSE_9" EXTRA="RST_EB_CAUSES##0xff##equals 256##not_equals 256" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EB from derailment</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value of bit8 is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value of bit8 is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS001" EXTRA="DD_CIOS001##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One compressor out of service indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS002" EXTRA="DD_CIOS002##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Two compressors out of service indication on unit on single unit configuration</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS003" EXTRA="DD_CIOS003##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Two compressors out of service indication on unit on mutliple unit configuration</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS004" EXTRA="DD_CIOS004##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Inconsistancy between LMRG</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS005" EXTRA="DD_CIOS005##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Inconsistancy between both LMRG and pressure value on a single US</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS011" EXTRA="DD_CIOS011##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">BCE master fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS012" EXTRA="DD_CIOS012##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">BCE no master fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS013" EXTRA="DD_CIOS013##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">BCE autotest result failed</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS014" EXTRA="DD_CIOS014##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Service brake applied loop in default indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS015" EXTRA="DD_CIOS015##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Service brake released loop in default indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS016" EXTRA="DD_CIOS016##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Emergency brake relay fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS017" EXTRA="DD_CIOS017##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Service brake forced released impossible indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS018" EXTRA="DD_CIOS018##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Release via Major Fault not possible on 1 axle/bogie/car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS019" EXTRA="DD_CIOS019##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one parking brake fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS020" EXTRA="DD_CIOS020##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least two parking isolated</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS021" EXTRA="DD_CIOS021##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Minor fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS022" EXTRA="DD_CIOS022##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Major Fault on 1 brake unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS023" EXTRA="DD_CIOS023##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Major Fault on at least 2 brake units on Single Unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS024" EXTRA="DD_CIOS024##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One brake unit isolated on Single Unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS025" EXTRA="DD_CIOS025##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Two brake units isolated on Single Unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS026" EXTRA="DD_CIOS026##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Mechanical WSP not available on 1 axle/bogie/car on Single unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS027" EXTRA="DD_CIOS027##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Mechanical WSP not available on more than 1 axle/bogie/car on Single unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS028" EXTRA="DD_CIOS028##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one axle locked</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS029" EXTRA="DD_CIOS029##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Untimely EB on 1 BCU</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS030" EXTRA="DD_CIOS030##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Emergency brake control and command discordance</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_ETF_FAILURE" EXTRA="ETF_FAILURE##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Traction failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS035" EXTRA="DD_CIOS035##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of 50% of ventilation of at least one HVAC unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS036" EXTRA="DD_CIOS036##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of 100% of ventilation of at least one HVAC unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS037" EXTRA="DD_CIOS037##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of 100% of heating of at least one HVAC unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS038" EXTRA="DD_CIOS038##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">HVAC unit cooling fault with normal temperature</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS039" EXTRA="DD_CIOS039##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">HVAC unit cooling fault with interior temperature in level 1</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS040" EXTRA="DD_CIOS040##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">HVAC unit cooling fault with interior temperature in level 2</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS041" EXTRA="DD_CIOS041##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">HVAC unit no fault with interior temperature higher than Max Threshold   </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS051" EXTRA="DD_CIOS051##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Discordance between information TCMS coupled and ATC. The relays stuck at resting position but ATC status is coupled.</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS052" EXTRA="DD_CIOS052##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Discordance between the uncoupling status and the uncoupling request. The coupled relay status is work but the train is not coupled</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS061" EXTRA="DD_CIOS061##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one door is not operational indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS062" EXTRA="DD_CIOS062##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one door is isolated indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS063" EXTRA="DD_CIOS063##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least two doors are isolated on the same side indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS064" EXTRA="DD_CIOS064##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Door RELEASE control fault train indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS065" EXTRA="DD_CIOS065##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Door INTERLOCK fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS066" EXTRA="DD_CIOS066##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Door OPEN ORDER fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS067" EXTRA="DD_CIOS067##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Door CLOSING request fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS068" EXTRA="DD_CIOS068##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Zero velocity fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS069" EXTRA="DD_CIOS069##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Detrainment Door OPEN ORDER fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS070" EXTRA="DD_CIOS070##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Partition Door Fault indication</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS071" EXTRA="DD_CIOS071##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Discrepency between EED status provided by EDCU and ATC information</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS072" EXTRA="DD_CIOS072##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Door EED permanent reset</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS081" EXTRA="DD_CIOS081##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Global failure about cabin occupied relays or contactor</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS082" EXTRA="DD_CIOS082##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Global failure about cabin neutral relays or contactor</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS083" EXTRA="DD_CIOS083##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Preparation and wake-up relays discordance</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS084" EXTRA="DD_CIOS084##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">De preparation (sleeping) relays discordance</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS085" EXTRA="DD_CIOS085##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Zero velocity relay discordance</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS086" EXTRA="DD_CIOS086##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Dead man relays discordance </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS087" EXTRA="DD_CIOS087##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">ATC Bypass activation failure or discordance</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS088" EXTRA="DD_CIOS088##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least Doors Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS089" EXTRA="DD_CIOS089##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least ONE Obstacle Detection Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS090" EXTRA="DD_CIOS090##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least ONE Derailment Detection Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS091" EXTRA="DD_CIOS091##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least ONE LMRG Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS092" EXTRA="DD_CIOS092##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least Two LMRG Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS093" EXTRA="DD_CIOS093##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Two driving modes are selected in the same time</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS094" EXTRA="DD_CIOS094##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one zero velocity relays, contactors are in failure </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS095" EXTRA="DD_CIOS095##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one brake Bypass active on train US OR UM </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS096" EXTRA="DD_CIOS096##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Discrepancy between K_ZeroVel relay and BCE or PCE or ATC </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS111" EXTRA="DD_CIOS111##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Incorrect Operational Status informing about exterior lights fault (tail lights and head lights</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS121" EXTRA="DD_CIOS121##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one fire detection is on failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS122" EXTRA="DD_CIOS122##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one fire is detected </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS123" EXTRA="DD_CIOS123##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one internal smoke sensor is on failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS124" EXTRA="DD_CIOS124##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one internal smoke detection is present</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS125" EXTRA="DD_CIOS125##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one external smoke sensor is on failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS126" EXTRA="DD_CIOS126##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">External smoke is detected</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS143" EXTRA="DD_CIOS143##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 Traction HV presence inconsistent with Train HV presence</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS144" EXTRA="DD_CIOS144##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC HV presence inconsistent with Train HV presence</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS145" EXTRA="DD_CIOS145##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than 1 Traction HV presence inconsistent with Train HV presence</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS146" EXTRA="DD_CIOS146##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than 1 APC HV presence inconsistent with Train HV presence</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS147" EXTRA="DD_CIOS147##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC HV Presence failure and 1 Traction HV Presence failure with Train HV presence</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS148" EXTRA="DD_CIOS148##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">IES consistency failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS149" EXTRA="DD_CIOS149##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">HV isolation failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS161" EXTRA="DD_CIOS161##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one circuit breakers is tripped in CAR</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS162" EXTRA="DD_CIOS162##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At  least two circuit breakers are tripped in the same car  on train</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS171" EXTRA="DD_CIOS171##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC LV Status false and 1 Battery not available (Battery isolated, Battery protection tripped, Battery not charging)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS172" EXTRA="DD_CIOS172##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">All APC MV Status false or communication lost</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS173" EXTRA="DD_CIOS173##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">2 or more LV Permanent or LV Prepared or Shedding contactor application fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS174" EXTRA="DD_CIOS174##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">MV Earthing fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS175" EXTRA="DD_CIOS175##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">LV Earthing fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS176" EXTRA="DD_CIOS176##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 LV Permanent or LV Prepared application fault </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS177" EXTRA="DD_CIOS177##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">30/45min shedding contactor application fault (loss of 1 traction or 1 car HVAC unit)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS178" EXTRA="DD_CIOS178##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">30s shedding contactor application fault (loss of 1 air compressor, screens, full lights…)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS179" EXTRA="DD_CIOS179##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC MV Status false or communication lost</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS180" EXTRA="DD_CIOS180##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC Major failure (if Train with Driver and DDU, due to APC reset available)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS181" EXTRA="DD_CIOS181##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of at least two batteries ( isolated,  protection tripped, or not charging)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS182" EXTRA="DD_CIOS182##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One Battery is isolated, or Battery protection tripped, or Battery not charging</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS183" EXTRA="DD_CIOS183##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">2/3 APC MV Status false or communication lost</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS184" EXTRA="DD_CIOS184##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">2 or more APC LV Status false  or communication lost</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS185" EXTRA="DD_CIOS185##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">1 APC LV Status false or communication lost</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS191" EXTRA="DD_CIOS191##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of video recorder</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS192" EXTRA="DD_CIOS192##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of cameras in at least one class</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS193" EXTRA="DD_CIOS193##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Fault or Loss of at least one Frontal Camera</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS194" EXTRA="DD_CIOS194##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least 50% of internal cameras are faulty or lost communication </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS195" EXTRA="DD_CIOS195##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of All PEI in the same class</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS196" EXTRA="DD_CIOS196##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of at least 1 PEI in a class</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS197" EXTRA="DD_CIOS197##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of PA announcement to passenger</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS198" EXTRA="DD_CIOS198##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of LCD 16/9 in the same class</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS199" EXTRA="DD_CIOS199##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of all interior LCD compact displays in the same platform</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS200" EXTRA="DD_CIOS200##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of all superwides in the same doors platform</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS201" EXTRA="DD_CIOS201##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of one UMC</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS202" EXTRA="DD_CIOS202##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of All PEI in the same car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS203" EXTRA="DD_CIOS203##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of at least 1 PEI in a car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS204" EXTRA="DD_CIOS204##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of LCD 16/9 in the same car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS221" EXTRA="DD_CIOS221##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Train Driving direction failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS222" EXTRA="DD_CIOS222##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Motor/Brake Train line failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS223" EXTRA="DD_CIOS223##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Traction Enable relay stuck closed failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS224" EXTRA="DD_CIOS224##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">PCE EB failure on single unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS225" EXTRA="DD_CIOS225##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Faulty Speed Limit on at least one PCE</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS226" EXTRA="DD_CIOS226##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction and ED brake on One motor car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS227" EXTRA="DD_CIOS227##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction and ED brake on at least two motor car</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS228" EXTRA="DD_CIOS228##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one minor failure on PCE</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS229" EXTRA="DD_CIOS229##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one suspension NOK</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS230" EXTRA="DD_CIOS230##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Faulty Direction Selection on at least one PCE</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS231" EXTRA="DD_CIOS231##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction or ED brake on one PCE (UM Configuration)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS232" EXTRA="DD_CIOS232##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction or ED brake on two (UM Configuration)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS233" EXTRA="DD_CIOS233##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction or ED brake on 3 PCE (UM Configuration)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS234" EXTRA="DD_CIOS234##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of traction or ED brake on 4 PCE (UM Configuration)</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS235" EXTRA="DD_CIOS235##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Faulty auto test on at least one PCE</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS236" EXTRA="DD_CIOS236##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Faulty pulse enable on at least one PCE or BCE on single unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS237" EXTRA="DD_CIOS237##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Faulty pulse enable on at least one PCE or BCE on multiple unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS238" EXTRA="DD_CIOS238##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">PCE EB failure on multiple unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS239" EXTRA="DD_CIOS239##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Traction Enable relay stuck open failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS241" EXTRA="DD_CIOS241##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss with one other CRS</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS242" EXTRA="DD_CIOS242##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One MPU has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS243" EXTRA="DD_CIOS243##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One TRS Or NETBOX has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS244" EXTRA="DD_CIOS244##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">communication Loss with one  other BRIO</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS245" EXTRA="DD_CIOS245##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One PCE has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS246" EXTRA="DD_CIOS246##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One BCE has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS247" EXTRA="DD_CIOS247##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One ACE has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS249" EXTRA="DD_CIOS249##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One DCU has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS250" EXTRA="DD_CIOS250##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One HVAC has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS251" EXTRA="DD_CIOS251##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One UMC has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS252" EXTRA="DD_CIOS252##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">One ATC has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS253" EXTRA="DD_CIOS253##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">The EVR has a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS254" EXTRA="DD_CIOS254##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one CRS have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS255" EXTRA="DD_CIOS255##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Loss of both MPU on a single US have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS256" EXTRA="DD_CIOS256##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one TRS Or NETBOX have a communication fault in US</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS257" EXTRA="DD_CIOS257##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one BRIO have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS258" EXTRA="DD_CIOS258##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one PCE have a communication fault in US</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS259" EXTRA="DD_CIOS259##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one BCE have a communication fault in US</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS260" EXTRA="DD_CIOS260##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one ACE have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS262" EXTRA="DD_CIOS262##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one DCU have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS263" EXTRA="DD_CIOS263##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one HVAC have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS264" EXTRA="DD_CIOS264##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one UMC have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS265" EXTRA="DD_CIOS265##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one ATC have a communication fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS266" EXTRA="DD_CIOS266##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Consist network on failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS267" EXTRA="DD_CIOS267##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least one software version discordancy fault  </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS268" EXTRA="DD_CIOS268##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Date and time update fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS269" EXTRA="DD_CIOS269##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">DataPlug fault recording</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS270" EXTRA="DD_CIOS270##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of RIOM3 in occupied cab</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS271" EXTRA="DD_CIOS271##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of RIOM3 in not occupied cab</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS272" EXTRA="DD_CIOS272##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of CRS5 in occupied cab</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS273" EXTRA="DD_CIOS273##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of CRS5 in not occupied cab</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS274" EXTRA="DD_CIOS274##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of CRS 2</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS275" EXTRA="DD_CIOS275##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Communication Loss of CRS 1</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS276" EXTRA="DD_CIOS276##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one TRS Or NETBOX have a communication fault in UM</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS278" EXTRA="DD_CIOS278##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">More than one PCE have a communication fault in UM</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS279" EXTRA="DD_CIOS279##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">PECD has communication Fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS280" EXTRA="DD_CIOS280##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Centralized maintenance with TrainTracer CFM is not available</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS281" EXTRA="DD_CIOS281##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EVR Critical Fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS282" EXTRA="DD_CIOS282##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EVR Major Fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS283" EXTRA="DD_CIOS283##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">EVR Minor Fault</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS286" EXTRA="DD_CIOS286##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least three brake units isolated on Single Unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS287" EXTRA="DD_CIOS287##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Two brake units isolated on Multiple Unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS288" EXTRA="DD_CIOS288##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Three brake units isolated on Multiple Unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS289" EXTRA="DD_CIOS289##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">At least four brake units isolated on Multiple Unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS290" EXTRA="DD_CIOS290##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">ATC EB command discordance </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS291" EXTRA="DD_CIOS291##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Major Fault on at least 2 brake units on Multiple Unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS292" EXTRA="DD_CIOS292##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Mechanical WSP not available on 1 or 2 axle/bogie/car on Multiple unit</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS293" EXTRA="DD_CIOS293##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Mechanical WSP not available on more than 2 axle/bogie/car on Multiple unit </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS294" EXTRA="DD_CIOS294##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">Consecutive emergency brake application during predefined time </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS295" EXTRA="DD_CIOS295##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">BCE Echelon Simple Failure</LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+			<KEY ID="ALM_IOS296" EXTRA="DD_CIOS296##0x01##equals 1##equals 0" TypeAlarm="MONITOR" CanBeUserReport="FALSE">
+				<ALARM SEVERITY="MIDDLE" TYPE="MONITOR"/>
+				<EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+				<LABELS>
+					<LABEL LOCALE="en-us" ROLE="-1">BCE Echelon Double Failure </LABEL>
+				</LABELS>
+				<PARAMETERS NUMBER="0"/>
+				<AREA KEY="RSM_U400"/>
+				<ALARM_ACTIVATION>When the value is equal to 1.</ALARM_ACTIVATION>
+				<ALARM_DISACTIVATION>When the value is equal to 0.</ALARM_DISACTIVATION>
+			</KEY>
+		</KEYS>
+	</MODULE>
+</MODULES>

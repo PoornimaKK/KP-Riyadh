@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MODULES xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xsi:noNamespaceSchemaLocation="AlarmEvent.xsd">
+  <MODULE ID="SigRule">
+      <KEYS>
+	  	<KEY ID="WSH_INTERMEDIATE_NOT_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate wash is not completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+        </KEY>
+	  	<KEY ID="WSH_INTERMEDIATE_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate wash is completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+        </KEY>		
+	  	<KEY ID="WSH_ALARM_LEVEL1_ACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level1 activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+        </KEY>	  
+	  	<KEY ID="WSH_ALARM_LEVEL1_NOTACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level1 not activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+        </KEY>			
+	  	<KEY ID="WSH_LOCAL_MAINTAINENCE_ACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Local Maintainence activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+        </KEY>
+	  	<KEY ID="WSH_ALARM_LEVEL0_ACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level0 activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+         </KEY>		
+	  	<KEY ID="WSH_ALARM_LEVEL0_NOTACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level0 not activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+         </KEY>			 
+	  	<KEY ID="WSH_LOCAL_MAINTAINENCE_NOTACTIVATED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Local not Maintainence activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="CBI"/>
+         </KEY>		 
+		<KEY ID="EVAC_BY_SPKS" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured due to SPKS activation</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		<KEY ID="EVAC_BY_TRAIN" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured due to train evacuation request</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="EVAC_BY_OPER" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured due to operator evacuation request</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="EVAC_BY_SPKS_TRAIN" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured to SPKS and train</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="EVAC_BY_SPKS_OPER" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured to SPKS and operator</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="EVAC_BY_TRAIN_OPER" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured to train and operator</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="EVAC_BY_ALL" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation %@1 is secured to SPKS and train and operator</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		 <KEY ID="NO_EVAC" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No evacuation requested on %@1</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="EvacuationZoneSec"/>
+         </KEY>
+		<KEY ID="PSD_SET1_NOTCLOSED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Platform %@1: Set 1 of PSD is not closed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="Platform"/>
+         </KEY>
+         <KEY ID="PSD_SET1_CLOSED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Platform %@1: Set 1 of PSD is closed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="Platform"/>
+         </KEY>
+         <KEY ID="PSD_SET2_NOTCLOSED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Platform %@1: Set 2 of PSD is not closed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="Platform"/>
+         </KEY>
+         <KEY ID="PSD_SET2_CLOSED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Platform %@1: Set 2 of PSD is closed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="Platform"/>
+         </KEY>
+         <KEY ID="RSM_UTO_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 UTO mode prohibited</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_UTO_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 UTO mode authorized</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_ATPM_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 ATPM mode prohibited</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>         
+         <KEY ID="RSM_ATPM_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 ATPM mode authorized</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>           
+         <KEY ID="RSM_CAB_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 active cab deactivation maintained</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>         
+         <KEY ID="RSM_CAB_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 active cab deactivation released</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_MAINTAIN_DOORS_CLOSED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 train doors maintained closed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RELEASE_DOORS" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 train doors released</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RESET_EB" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Remote EB reset requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_TEST_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Test mode activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_TEST_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Test mode inhibited</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RESTRICTION_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 station restriction activated</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RESTRICTION_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 station restriction inhibited</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+		 <KEY ID="RSM_WASHING_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 washing state requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+		 <KEY ID="RSM_WASHING_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 washing state not requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_UTO_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 UTO mode prohibition request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_UTO_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 UTO mode authorization request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_ATPM_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 ATPM mode prohibition request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_ATPM_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 ATPM mode authorization request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_CAB_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 active cab deactivation request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>       
+         <KEY ID="RSM_CAB_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 active cab deactivation release request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>         
+         <KEY ID="RSM_MAINTAIN_DOORS_CLOSED_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 train doors closed request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RELEASE_DOORS_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 train doors release request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RESET_EB_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Remote EB reset request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>         
+         <KEY ID="RSM_TEST_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Test mode activation request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY> 
+         <KEY ID="RSM_TEST_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 Test mode inhibition request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>         
+         <KEY ID="RSM_RESTRICTION_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 station restriction activation request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="RSM_RESTRICTION_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 station restriction inhibition request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+		 <KEY ID="RSM_WASHING_ON_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 washing state request failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+		 <KEY ID="RSM_WASHING_OFF_ERROR" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train %@1 washing state cancellation failed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="1">
+               <PARAMETER POSITION="1" TYPE="UString" VALUE="ObjectName"/>
+            </PARAMETERS>
+            <AREA KEY="HMITrain"/>
+         </KEY>
+         <KEY ID="WSH_NOTREADY" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine is not ready</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+         <KEY ID="WSH_READY" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine is ready</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+         <KEY ID="WSH_NOTINPROGRESS" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing is not in progress</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+         <KEY ID="WSH_INPROGRESS" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing is in progress</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+         <KEY ID="WSH_LOCALCONTROL_OFF" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine is not in local control mode</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+         <KEY ID="WSH_LOCALCONTROL_ON" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine is in local control mode</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_FRONT_NOT_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Front wash is not completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_FRONT_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Front wash is completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_REAR_NOT_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Rear wash is not completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_REAR_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Rear wash is completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_TRAIN_NOT_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train wash is not completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="WSH_TRAIN_COMPLETED" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train wash is completed</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="NO_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No wash program is requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="STOP_AND_GO_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Stop and go program  is requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="GO_THROUGH_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Go through program  is requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="INTERMEDIATE_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate program is requested</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>		 
+		 <KEY ID="CANCEL_NO_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No wash program is cancelled</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="CANCEL_STOP_AND_GO_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Stop and go program  is cancelled</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="CANCEL_GO_THROUGH_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Go through program  is cancelled</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>
+		 <KEY ID="CANCEL_INTERMEDIATE_WASH" TypeAlarm="TRIGGER" CanBeUserReport="FALSE">
+            <EVENT SEVERITY="MIDDLE" TYPE="PE"/>
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate program  is cancelled</LABEL>
+            </LABELS>
+            <PARAMETERS NUMBER="0"/>
+            <AREA KEY="CBI"/>
+         </KEY>		 
+      </KEYS>
+  </MODULE>
+  <DICO>
+      <DICO_KEYS>
+		 <DICO_KEY ID="INTERMEDIATE_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate program  is requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="CANCEL_INTERMEDIATE_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate program  is cancelled</LABEL>
+            </LABELS>
+         </DICO_KEY>		 
+		 <DICO_KEY ID="WSH_INTERMEDIATE_NOT_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate wash not completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_INTERMEDIATE_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Intermediate wash completed</LABEL>
+            </LABELS>
+         </DICO_KEY>	  
+		 <DICO_KEY ID="WSH_ALARM_LEVEL1_ACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level1 activated</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_ALARM_LEVEL1_NOTACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level1 not activated</LABEL>
+            </LABELS>
+         </DICO_KEY>		 
+		 <DICO_KEY ID="WSH_ALARM_LEVEL0_ACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level0 activated</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_ALARM_LEVEL0_NOTACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Alarm Level0 not activated</LABEL>
+            </LABELS>
+         </DICO_KEY>		 
+		 <DICO_KEY ID="WSH_LOCAL_MAINTAINENCE_ACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Local Maintainence activated</LABEL>
+            </LABELS>
+         </DICO_KEY>	
+		 <DICO_KEY ID="WSH_LOCAL_MAINTAINENCE_NOTACTIVATED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Wash Plant Local not Maintainence activated</LABEL>
+            </LABELS>
+         </DICO_KEY>		 
+		 <DICO_KEY ID="EVAC_BY_SPKS">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to SPKS activation</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_TRAIN">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to train evacuation request</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_OPER">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to Operator manual evacuation request</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_SPKS_TRAIN">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to SPKS and train</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_SPKS_OPER">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to SPKS and operator</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_TRAIN_OPER">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to train and operator</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="EVAC_BY_ALL">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Evacuation due to SPKS and train and operator</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="NO_EVAC">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No evacuation requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="PSD_SET1_NOTCLOSED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">PSD Set 1 not closed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="PSD_SET1_CLOSED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">PSD Set 1 closed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="PSD_SET2_NOTCLOSED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">PSD Set 2 not closed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="PSD_SET2_CLOSED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">PSD Set 2 closed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_UTO_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">UTO mode prohibited</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_UTO_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">UTO mode authorized</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_ATPM_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">ATPM mode prohibited</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_ATPM_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">ATPM mode authorized</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="RSM_CAB_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Active cab deactivated</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="RSM_CAB_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Active cab deactivation released</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="RSM_MAINTAIN_DOORS_CLOSED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train doors maintained closed</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="RSM_RELEASE_DOORS">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train doors released</LABEL>
+            </LABELS>
+         </DICO_KEY> 
+         <DICO_KEY ID="RSM_RESET_EB">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Remote reset EB</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_TEST_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Test mode activated</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_TEST_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Test mode inhibited</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RESTRICTION_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Station restriction activated</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RESTRICTION_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Station restriction inhibited</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="RSM_WASHING_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train  washing state requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="RSM_WASHING_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train  washing state cancelled</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_UTO_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">UTO mode prohibition request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_UTO_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">UTO mode authorization request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_ATPM_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">ATPM mode prohibition request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_ATPM_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">ATPM mode authorization request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_CAB_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Active cab deactivation request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_CAB_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Active cab deactivation release request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_MAINTAIN_DOORS_CLOSED_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train doors closed request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RELEASE_DOORS_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train doors release request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RESET_EB_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Remote EB reset request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_TEST_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Test mode activation request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_TEST_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Test mode inhibition request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RESTRICTION_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Station restriction activation request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="RSM_RESTRICTION_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Station restriction inhibition request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		<DICO_KEY ID="RSM_WASHING_ON_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train  washing state request failed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		<DICO_KEY ID="RSM_WASHING_OFF_ERROR">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train  washing state cancellation failed</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="WSH_NOTREADY">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine not ready</LABEL>
+            </LABELS>
+         </DICO_KEY>                  
+         <DICO_KEY ID="WSH_READY">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine ready</LABEL>
+            </LABELS>
+         </DICO_KEY>          
+         <DICO_KEY ID="WSH_NOTINPROGRESS">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing not in progress</LABEL>
+            </LABELS>
+         </DICO_KEY>         
+         <DICO_KEY ID="WSH_INPROGRESS">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing in progress</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="WSH_LOCALCONTROL_OFF">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine not in local control mode</LABEL>
+            </LABELS>
+         </DICO_KEY>
+         <DICO_KEY ID="WSH_LOCALCONTROL_ON">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Washing machine in local control mode</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_FRONT_NOT_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Front wash is not completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_FRONT_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Front wash is completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_REAR_NOT_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Rear wash is not completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_REAR_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Rear wash is completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_TRAIN_NOT_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train wash not completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="WSH_TRAIN_COMPLETED">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Train wash completed</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="NO_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No wash program requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="STOP_AND_GO_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Stop and go program requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="GO_THROUGH_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Go through program requested</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="CANCEL_NO_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">No wash program cancelled</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="CANCEL_STOP_AND_GO_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Stop and go program  cancelled</LABEL>
+            </LABELS>
+         </DICO_KEY>
+		 <DICO_KEY ID="CANCEL_GO_THROUGH_WASH">
+            <LABELS>
+               <LABEL LOCALE="en-us" ROLE="-1">Go through program  cancelled</LABEL>
+            </LABELS>
+         </DICO_KEY>
+      </DICO_KEYS>
+  </DICO>
+</MODULES>
